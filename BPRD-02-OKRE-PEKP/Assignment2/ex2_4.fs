@@ -8,6 +8,7 @@ open Absyn
 let sinstrToInt =
     function
     | SCstI i -> [ 0; i ]
+    (* Exercise 2.4 Implement function sinstrToInt that converts a sinstr into a list of integers representing the bytecode instruction on the file.*)
     | SVar i -> [ 1; i ]
     | SAdd -> [ 2 ]
     | SSub -> [ 3 ]
@@ -15,6 +16,7 @@ let sinstrToInt =
     | SPop -> [ 5 ]
     | SSwap -> [ 6 ]
 
+(* Exercise 2.4 Implement function assemble that folds over a list of sinstr and use sinstrToInt to accumulate the list of integers. *)
 let assemble sinstrs =
     List.fold (fun acc instr -> acc @ (sinstrToInt instr)) [] sinstrs
 
