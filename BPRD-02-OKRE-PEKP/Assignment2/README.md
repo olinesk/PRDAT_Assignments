@@ -41,6 +41,8 @@ Read the specification `hello.fsl`.
 What are the regular expressions involved, and which semantic values are they associated with?
 
 **Answer:**
+The regular expressions invovled are: `['0'-'9']`.
+The semantic value is a single digit number between 0-9.
 
 </br>
 
