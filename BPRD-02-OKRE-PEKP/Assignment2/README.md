@@ -15,7 +15,22 @@ Has already been done and simply just compile provided `Machine.java` and run:
 
 ## PLC 3.2
 
+Write a regular expression that recognises all sequences consisting of *a* and *b* where two *a*'s are always seperated by at least one *b*. 
+For instance, these four strings are legal: *b*, *a*, *ba*, *ababbbaba*; but these two strings are illegal: *aa*, *babaa*.
 
+##### Answer: `b*(ab*|b)*`
+
+`b*` any sequence of *b*'s.
+`(ab*|b)*`
+   `ab*` any sequence of *a* followed by zero or more *b*'s.
+   `b` standalone *b*.
+`*` repeats pattern.
+
+Construct the corresponding NFA. Try to find a DFA corresponding to the NFA.
+
+##### NFA:
+
+##### DFA:
 
 </br>
 
