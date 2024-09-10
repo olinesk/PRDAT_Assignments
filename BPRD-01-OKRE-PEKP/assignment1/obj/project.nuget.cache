@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7kW+BUQiZ8o=",
+  "success": true,
+  "projectFilePath": "/Users/olinekrebs/Desktop/ITU/7semester/PRDATA/Assignments/BPRD-01-OKRE-PEKP/assignment1/assignment1.fsproj",
+  "expectedPackageFiles": [
+    "/Users/olinekrebs/.nuget/packages/fsharp.core/8.0.400/fsharp.core.8.0.400.nupkg.sha512"
+  ],
+  "logs": []
+}
