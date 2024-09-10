@@ -2,6 +2,7 @@
 
 All non-code answers are in this file.
 
+</br>
 
 ---
 
@@ -18,7 +19,7 @@ Has already been done and simply just compile provided `Machine.java` and run:
 Write a regular expression that recognises all sequences consisting of *a* and *b* where two *a*'s are always seperated by at least one *b*. 
 For instance, these four strings are legal: *b*, *a*, *ba*, *ababbbaba*; but these two strings are illegal: *aa*, *babaa*.
 
-##### Answer: `b*(ab*|b)*`
+**Answer:** `b*(ab*|b)*`
 
 `b*` any sequence of *b*'s.
 `(ab*|b)*`
@@ -28,9 +29,9 @@ For instance, these four strings are legal: *b*, *a*, *ba*, *ababbbaba*; but the
 
 Construct the corresponding NFA. Try to find a DFA corresponding to the NFA.
 
-##### NFA:
+**NFA:**
 
-##### DFA:
+**DFA:**
 
 </br>
 
@@ -39,9 +40,7 @@ Construct the corresponding NFA. Try to find a DFA corresponding to the NFA.
 Read the specification `hello.fsl`.
 What are the regular expressions involved, and which semantic values are they associated with?
 
-##### Answer:
-
-
+**Answer:**
 
 </br>
 
@@ -49,14 +48,10 @@ What are the regular expressions involved, and which semantic values are they as
 
 Generate the lexer out of the specification using a command prompt. Which additional file is generated during the process?
 
-##### Answer:
-
-
+**Answer:**
 How many states are there by the automation of the lexer?
 
-##### Answer:
-
-
+**Answer:**
 
 </br>
 
@@ -64,9 +59,8 @@ How many states are there by the automation of the lexer?
 
 Compile and run the generated program `hello.fs`from question 2.
 
-##### Answer:
+**Answer:**
 The program is run with `dotnet run`.
-
 
 </br>
 
@@ -76,9 +70,8 @@ Extend the lexer specification `hello.fsl`to recognise numbers of more than one 
 New lexer specification is `hello2.fsl`.
 Generate `hello2.fs`, compile and run the generated program.
 
-##### Answer:
+**Answer:**
 The program is run with `dotnet run`.
-
 
 </br>
 
@@ -90,9 +83,8 @@ Generate `hello3.fs`, compile and run the generated program.
 
 Hint: You can use the regular expression `[+-]?([0-9]*[.])?[0-9]+` to recognize floats.
 
-##### Answer:
+**Answer:**
 The program is run with `dotnet run`.
-
 
 </br>
 
@@ -126,8 +118,8 @@ The lexer recognises 34
 
 Explain why the results are expected behaviour from the lexer.
 
-##### Answer:
+**Answer:**
 
-
+</b>
 
 ---
