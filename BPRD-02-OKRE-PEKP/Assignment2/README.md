@@ -2,11 +2,8 @@
 
 All non-code answers are in this file.
 
-</br>
 
 ---
-
-</br>
 
 ## PLC 2.5
 
@@ -16,17 +13,9 @@ Has already been done and simply just compile provided `Machine.java` and run:
 
 </br>
 
----
-
-</br>
-
 ## PLC 3.2
 
 
-
-</br>
-
----
 
 </br>
 
@@ -38,10 +27,6 @@ What are the regular expressions involved, and which semantic values are they as
 ##### Answer:
 
 
-
-</br>
-
----
 
 </br>
 
@@ -57,9 +42,6 @@ How many states are there by the automation of the lexer?
 ##### Answer:
 
 
-</br>
-
----
 
 </br>
 
@@ -70,9 +52,6 @@ Compile and run the generated program `hello.fs`from question 2.
 ##### Answer:
 The program is run with `dotnet run`.
 
-</br>
-
----
 
 </br>
 
@@ -85,9 +64,6 @@ Generate `hello2.fs`, compile and run the generated program.
 ##### Answer:
 The program is run with `dotnet run`.
 
-</br>
-
----
 
 </br>
 
@@ -102,9 +78,6 @@ Hint: You can use the regular expression `[+-]?([0-9]*[.])?[0-9]+` to recognize 
 ##### Answer:
 The program is run with `dotnet run`.
 
-</br>
-
----
 
 </br>
 
@@ -141,7 +114,5 @@ Explain why the results are expected behaviour from the lexer.
 ##### Answer:
 
 
-
-</br>
 
 ---
