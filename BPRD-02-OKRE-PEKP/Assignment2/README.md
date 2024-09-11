@@ -2,13 +2,11 @@
 
 All non-code answers are in this file.
 
+**How to run program:**
+
 </br>
 
 ---
-
-dotnet fslex.dll --unicode ../BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl
-
-dotnet fsyacc.dll --module ExprPar ../BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprPar.fsy
 
 ## PLC 2.5 - DONE + 2.4
 
@@ -50,9 +48,9 @@ The semantic value is a single digit number between 0-9.
 
 </br>
 
-## HelloLex Question 2
+## HelloLex Question 2 - DONE
 
-Generate the lexer out of the specification using a command prompt. 
+Generate the lexer out of the specification using a command prompt.
 Which additional file is generated during the process?
 
 **Answer:**
@@ -62,6 +60,8 @@ How many states are there by the automation of the lexer?
 
 **Answer:**
 3 states.
+
+Inster picture
 
 </br>
 

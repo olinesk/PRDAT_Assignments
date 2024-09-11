@@ -6,10 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <FsLex Include="hello.fsl">
+      <OtherFlags>--unicode</OtherFlags>
+    </FsLex>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Include="hello.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="/Users/nh/fsharp/FsLexYacc.Runtime.dll" />
+    <PackageReference Include="FsLexYacc" Version="11.3.0" />
+    <PackageReference Include="FsLexYacc.Runtime" Version="11.3.0" />
   </ItemGroup>
 </Project>

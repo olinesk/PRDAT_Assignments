@@ -6,12 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <FsLex Include="HelloLex/hello.fsl">
-      <OtherFlags>--unicode</OtherFlags>
-    </FsLex>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Expr/ExprLex.fsl" />
     <None Include="Expr/ExprPar.fsy" />
     <Compile Include="Expr/Absyn.fs" />
@@ -21,7 +15,6 @@
     <Compile Include="Expr/ExprLex.fs" />
     <Compile Include="Expr/Parse.fs" />
     <Compile Include="ex2_4.fs" />
-    <Compile Include="hello.fs" />
   </ItemGroup>
 
   <ItemGroup>

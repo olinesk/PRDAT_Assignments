@@ -1,12 +1,12 @@
 
-# 1 "HelloLex/hello.fsl"
+# 1 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fsl"
   // starting
 
 module Hello_fslex
 open FSharp.Text.Lexing
 open System
 
-# 9 "hello.fs"
+# 9 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fs"
 let trans : uint16[] array = 
     [| 
     (* State 0 *)
@@ -23,18 +23,18 @@ let rec _fslex_dummy () = _fslex_dummy()
 and Tokenize  lexbuf =
   match _fslex_tables.Interpret(0,lexbuf) with
   | 0 -> ( 
-# 9 "HelloLex/hello.fsl"
+# 9 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fsl"
                                      LexBuffer<char>.LexemeString lexbuf 
-# 28 "hello.fs"
+# 28 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fs"
           )
   | 1 -> ( 
-# 10 "HelloLex/hello.fsl"
+# 10 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fsl"
                                      failwith "Lexer error: illegal symbol" 
-# 33 "hello.fs"
+# 33 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fs"
           )
   | _ -> failwith "Tokenize"
 
-# 13 "HelloLex/hello.fsl"
+# 13 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fsl"
   // ending
 
 [<EntryPoint>]
@@ -46,5 +46,5 @@ let main argv =
       0
 
 
-# 50 "hello.fs"
-# 3000000 "hello.fs"
+# 50 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fs"
+# 3000000 "../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello.fs"
