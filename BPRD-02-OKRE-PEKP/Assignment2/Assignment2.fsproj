@@ -16,9 +16,17 @@
     <None Include="Expr/ExprPar.fsy" />
     <Compile Include="Expr/Absyn.fs" />
     <Compile Include="Expr/Expr.fs" />
+    <Compile Include="Expr/ExprPar.fsi" />
+    <Compile Include="Expr/ExprPar.fs" />
+    <Compile Include="Expr/ExprLex.fs" />
     <Compile Include="Expr/Parse.fs" />
     <Compile Include="ex2_4.fs" />
     <Compile Include="hello.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FsLexYacc" Version="11.3.0" />
+    <PackageReference Include="FsLexYacc.Runtime" Version="11.3.0" />
   </ItemGroup>
 
 </Project>

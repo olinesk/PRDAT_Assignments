@@ -6,7 +6,9 @@ All non-code answers are in this file.
 
 ---
 
-dotnet nuget verify Desktop/All_Assignments/fsharp/FsLexYacc.Runtime.dll
+dotnet fslex.dll --unicode ../BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl
+
+dotnet fsyacc.dll --module ExprPar ../BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprPar.fsy
 
 ## PLC 2.5 - DONE + 2.4
 
