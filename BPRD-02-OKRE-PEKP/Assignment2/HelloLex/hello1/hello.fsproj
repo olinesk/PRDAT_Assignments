@@ -6,12 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <FsLex Include="hello.fsl">
-      <OtherFlags>--unicode</OtherFlags>
-    </FsLex>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Include="hello.fs" />
   </ItemGroup>
 

@@ -64,12 +64,28 @@ How many states are there by the automation of the lexer?
 
 </br>
 
-## HelloLex Question 3
+## HelloLex Question 3 - DONE
 
 Compile and run the generated program `hello.fs`from question 2.
 
 **Answer:**
-The program is run with `dotnet run`.
+To run the program you must follow these steps:
+
+``` fsharppc
+% dotnet build HelloLex/hello1/hello.fsproj
+
+% dotnet HelloLex/hello1/bin/Debug/net8.0/hello.dll
+```
+
+Outcome should be:
+
+``` fsharppc
+Hello World from FsLex!
+
+Please pass a digit:
+34
+The lexer recognizes 3
+```
 
 </br>
 
