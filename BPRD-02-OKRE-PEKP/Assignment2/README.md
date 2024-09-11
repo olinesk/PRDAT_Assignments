@@ -18,24 +18,37 @@ Has already been done and simply just compile provided `Machine.java` and run:
 
 </br>
 
-## PLC 3.2 MISSING HALF
+## PLC 3.2
 
 Write a regular expression that recognises all sequences consisting of *a* and *b* where two *a*'s are always seperated by at least one *b*.
 For instance, these four strings are legal: *b*, *a*, *ba*, *ababbbaba*; but these two strings are illegal: *aa*, *babaa*.
 
-**Answer:** `b*(ab*|b)*`
+**Answer:** 
 
-`b*` any sequence of *b*'s.
-`(ab*|b)*`
-   `ab*` any sequence of *a* followed by zero or more *b*'s.
-   `b` standalone *b*.
-`*` repeats pattern.
+```regex
+(b|ab)*
+```
+
+`b*` a single *b*.
+`ab` an *a* will always be followed by a *b*, ensuring that no two *a*'s will ever be followed by each other.
+`(b|ab)*` repeats any sequence of `b` or `ab`.
 
 Construct the corresponding NFA. Try to find a DFA corresponding to the NFA.
 
 **NFA:**
 
+![NFA](Appendix/NFA.png)
+
 **DFA:**
+
+![DFA](Appendix/DFA.png)
+
+| DFA state | move(a) | move(b) | NFA states               |
+|-----------|---------|---------|--------------------------|
+| `*A*`     |  `B`    |   `C`   | `{ 0, 1, 2, 4, *8* }`    |
+| `*B*`     |  `{}`   |   `D`   | `{ 5 }`                  |
+| `*C*`     |  `B`    |   `C`   | `{ 1, 2, 3, 4, 7, *8* }` |
+| `*D*`     |  `B`    |   `C`   | `{ 1, 2, 4, 6, 7, *8* }` |
 
 </br>
 
