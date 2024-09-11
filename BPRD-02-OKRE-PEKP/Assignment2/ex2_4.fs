@@ -26,11 +26,9 @@ let intsToFile (inss: int list) (fname: string) =
     let text = String.concat " " (List.map string inss)
     System.IO.File.WriteAllText(fname, text)
 
+let e1 = Let("z", CstI 17, Prim("+", Var "z", Var "z"));
 
-// From github
-let e1 = Let("z", CstI 17, Prim("+",Var "z", Var "z"));;
+let e1Comp = scomp e1 []
 
-let e1Compiled = scomp e1 [];; //val it : sinstr list = [SCstI 17; SVar 0; SVar 1; SAdd; SSwap; SPop]
-
-let test1 = assemble (scomp e1 []);; //val it : int list = [0; 17; 1; 0; 1; 1; 2; 6; 5]
-intsToFile test1 "test.txt"
+let test = assemble e1Comp
+intsToFile test "is1.txt"

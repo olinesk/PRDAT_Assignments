@@ -89,7 +89,7 @@ The lexer recognizes 3
 
 </br>
 
-## HelloLex Question 4
+## HelloLex Question 4 - DONE
 
 Extend the lexer specification `hello.fsl`to recognise numbers of more than one digit.
 New lexer specification is `hello2.fsl`.
@@ -124,7 +124,7 @@ The lexer recognizes 234
 
 </br>
 
-## HelloLex Question 5
+## HelloLex Question 5 - DONE
 
 Extend the lexer specification `hello2.fsl`to recognise numbers of more than one digit.
 New lexer specification is `hello3.fsl`.
@@ -137,7 +137,7 @@ Hint: You can use the regular expression `[+-]?([0-9]*[.])?[0-9]+` to recognize 
 ```fsharppc
 dotnet fslex.dll --unicode ../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/hello3.fsl
 compiling to dfas (can take a while...)
-4 states
+10 states
 writing output
 ```
 
@@ -155,8 +155,8 @@ Outcome should be:
 Hello World from FsLex!
 
 Please pass a digit:
-234
-The lexer recognizes 234
+34.34
+The lexer recognizes 34.34
 ```
 
 </br>

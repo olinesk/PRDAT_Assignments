@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/hello3.fsproj": {}
+  },
+  "projects": {
+    "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/hello3.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/hello3.fsproj",
+        "projectName": "hello3",
+        "projectPath": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/hello3.fsproj",
+        "packagesPath": "/Users/olinekrebs/.nuget/packages/",
+        "outputPath": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/olinekrebs/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/8.0.401/FSharp/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[8.0.400, )",
+              "generatePathProperty": true
+            },
+            "FsLexYacc": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "generatePathProperty": true
+            },
+            "FsLexYacc.Runtime": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
