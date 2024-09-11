@@ -60,8 +60,7 @@ How many states are there by the automation of the lexer?
 
 **Answer:**
 3 states.
-
-Inster picture
+![Number of states](Appendix/states.png)
 
 </br>
 
