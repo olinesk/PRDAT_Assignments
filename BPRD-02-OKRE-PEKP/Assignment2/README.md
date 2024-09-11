@@ -6,7 +6,14 @@ All non-code answers are in this file.
 
 ---
 
-## PLC 2.5
+Users/olineskrebs/Desktop/All_Assignments/fsharp/FsLexYacc.11.3.0/build/fslex --unicode Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl
+Users/olineskrebs/Desktop/All_Assignments/fsharp/FsLexYacc.11.3.0/build/fsyacc --module ExprPar Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprPar.fsy
+
+/Users/olineskrebs/Desktop/All_Assignments/fsharp/fslex --unicode "/Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl"
+
+fslex --unicode Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl
+
+## PLC 2.5 - DONE + 2.4
 
 Has already been done and simply just compile provided `Machine.java` and run:
 ```% javac Machine.java```
@@ -35,7 +42,7 @@ Construct the corresponding NFA. Try to find a DFA corresponding to the NFA.
 
 </br>
 
-## HelloLex Question 1
+## HelloLex Question 1 - DONE
 
 Read the specification `hello.fsl`.
 What are the regular expressions involved, and which semantic values are they associated with?
