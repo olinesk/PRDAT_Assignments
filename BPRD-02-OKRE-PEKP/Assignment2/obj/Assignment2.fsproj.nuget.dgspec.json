@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/olinekrebs/Desktop/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj": {}
+    "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj": {}
   },
   "projects": {
-    "/Users/olinekrebs/Desktop/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj": {
+    "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olinekrebs/Desktop/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj",
+        "projectUniqueName": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj",
         "projectName": "Assignment2",
-        "projectPath": "/Users/olinekrebs/Desktop/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj",
+        "projectPath": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj",
         "packagesPath": "/Users/olinekrebs/.nuget/packages/",
-        "outputPath": "/Users/olinekrebs/Desktop/BPRD-02-OKRE-PEKP/Assignment2/obj/",
+        "outputPath": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/olinekrebs/.nuget/NuGet/NuGet.Config"
@@ -43,6 +43,16 @@
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
               "version": "[8.0.400, )",
+              "generatePathProperty": true
+            },
+            "FsLexYacc": {
+              "target": "Package",
+              "version": "[11.3.0, )",
+              "generatePathProperty": true
+            },
+            "FsLexYacc.Runtime": {
+              "target": "Package",
+              "version": "[11.3.0, )",
               "generatePathProperty": true
             }
           },

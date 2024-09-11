@@ -14,5 +14,7 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgFSharp_Core Condition=" '$(PkgFSharp_Core)' == '' ">/Users/olinekrebs/.nuget/packages/fsharp.core/8.0.400</PkgFSharp_Core>
+    <PkgFsLexYacc_Runtime Condition=" '$(PkgFsLexYacc_Runtime)' == '' ">/Users/olinekrebs/.nuget/packages/fslexyacc.runtime/11.3.0</PkgFsLexYacc_Runtime>
+    <PkgFsLexYacc Condition=" '$(PkgFsLexYacc)' == '' ">/Users/olinekrebs/.nuget/packages/fslexyacc/11.3.0</PkgFsLexYacc>
   </PropertyGroup>
 </Project>
