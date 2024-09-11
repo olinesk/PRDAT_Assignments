@@ -6,12 +6,7 @@ All non-code answers are in this file.
 
 ---
 
-Users/olineskrebs/Desktop/All_Assignments/fsharp/FsLexYacc.11.3.0/build/fslex --unicode Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl
-Users/olineskrebs/Desktop/All_Assignments/fsharp/FsLexYacc.11.3.0/build/fsyacc --module ExprPar Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprPar.fsy
-
-/Users/olineskrebs/Desktop/All_Assignments/fsharp/fslex --unicode "/Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl"
-
-fslex --unicode Users/olineskrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Expr/ExprLex.fsl
+dotnet nuget verify Desktop/All_Assignments/fsharp/FsLexYacc.Runtime.dll
 
 ## PLC 2.5 - DONE + 2.4
 

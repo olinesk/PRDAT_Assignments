@@ -1,12 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/yA2LEqMyJg=",
+  "dgSpecHash": "STi3fKLFfNk=",
   "success": true,
   "projectFilePath": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/Assignment2.fsproj",
   "expectedPackageFiles": [
-    "/Users/olinekrebs/.nuget/packages/fsharp.core/8.0.400/fsharp.core.8.0.400.nupkg.sha512",
-    "/Users/olinekrebs/.nuget/packages/fslexyacc/11.3.0/fslexyacc.11.3.0.nupkg.sha512",
-    "/Users/olinekrebs/.nuget/packages/fslexyacc.runtime/11.3.0/fslexyacc.runtime.11.3.0.nupkg.sha512"
+    "/Users/olinekrebs/.nuget/packages/fsharp.core/8.0.400/fsharp.core.8.0.400.nupkg.sha512"
   ],
   "logs": []
 }

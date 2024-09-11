@@ -1,0 +1,5 @@
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/obj/Debug/net6.0/Assignment2.fsproj.AssemblyReference.cache
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/obj/Debug/net6.0/Assignment2.AssemblyInfoInputs.cache
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/obj/Debug/net6.0/Assignment2.AssemblyInfo.fs
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/obj/Debug/net6.0/Assignment2.fsproj.CoreCompileInputs.cache
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-02-OKRE-PEKP/Assignment2/obj/Debug/net6.0/Assignment2.sourcelink.json
