@@ -96,7 +96,31 @@ New lexer specification is `hello2.fsl`.
 Generate `hello2.fs`, compile and run the generated program.
 
 **Answer:**
-The program is run with `dotnet run`.
+
+```fsharppc
+dotnet fslex.dll --unicode ../../Assignment2/HelloLex/hello2/hello2.fsl
+compiling to dfas (can take a while...)
+4 states
+writing output
+```
+
+To run the program you must follow these steps:
+
+``` fsharppc
+% dotnet build HelloLex/hello2/hello2.fsproj
+
+% dotnet HelloLex/hello2/bin/Debug/net8.0/hello2.dll
+```
+
+Outcome should be:
+
+``` fsharppc
+Hello World from FsLex!
+
+Please pass a digit:
+234
+The lexer recognizes 234
+```
 
 </br>
 
@@ -109,7 +133,31 @@ Generate `hello3.fs`, compile and run the generated program.
 Hint: You can use the regular expression `[+-]?([0-9]*[.])?[0-9]+` to recognize floats.
 
 **Answer:**
-The program is run with `dotnet run`.
+
+```fsharppc
+dotnet fslex.dll --unicode ../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/hello3.fsl
+compiling to dfas (can take a while...)
+4 states
+writing output
+```
+
+To run the program you must follow these steps:
+
+``` fsharppc
+% dotnet build HelloLex/hello3/hello3.fsproj
+
+% dotnet HelloLex/hello3/bin/Debug/net8.0/hello3.dll
+```
+
+Outcome should be:
+
+``` fsharppc
+Hello World from FsLex!
+
+Please pass a digit:
+234
+The lexer recognizes 234
+```
 
 </br>
 
