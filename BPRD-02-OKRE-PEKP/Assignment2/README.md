@@ -2,13 +2,15 @@
 
 All non-code answers are in this file.
 
-**How to run program:**
-
 </br>
 
 ---
 
-## PLC 2.5 - DONE + 2.4
+## PLC 2.4
+
+All answers to this exercise can be found in `ex2_4.fs`.
+
+## PLC 2.5
 
 Has already been done and simply just compile provided `Machine.java` and run:
 ```% javac Machine.java```
@@ -16,7 +18,7 @@ Has already been done and simply just compile provided `Machine.java` and run:
 
 </br>
 
-## PLC 3.2
+## PLC 3.2 MISSING HALF
 
 Write a regular expression that recognises all sequences consisting of *a* and *b* where two *a*'s are always seperated by at least one *b*.
 For instance, these four strings are legal: *b*, *a*, *ba*, *ababbbaba*; but these two strings are illegal: *aa*, *babaa*.
@@ -37,7 +39,7 @@ Construct the corresponding NFA. Try to find a DFA corresponding to the NFA.
 
 </br>
 
-## HelloLex Question 1 - DONE
+## HelloLex Question 1
 
 Read the specification `hello.fsl`.
 What are the regular expressions involved, and which semantic values are they associated with?
@@ -48,7 +50,7 @@ The semantic value is a single digit number between 0-9.
 
 </br>
 
-## HelloLex Question 2 - DONE
+## HelloLex Question 2
 
 Generate the lexer out of the specification using a command prompt.
 Which additional file is generated during the process?
@@ -64,7 +66,7 @@ How many states are there by the automation of the lexer?
 
 </br>
 
-## HelloLex Question 3 - DONE
+## HelloLex Question 3
 
 Compile and run the generated program `hello.fs`from question 2.
 
@@ -85,11 +87,12 @@ Hello World from FsLex!
 Please pass a digit:
 34
 The lexer recognizes 3
+%
 ```
 
 </br>
 
-## HelloLex Question 4 - DONE
+## HelloLex Question 4
 
 Extend the lexer specification `hello.fsl`to recognise numbers of more than one digit.
 New lexer specification is `hello2.fsl`.
@@ -98,10 +101,11 @@ Generate `hello2.fs`, compile and run the generated program.
 **Answer:**
 
 ```fsharppc
-dotnet fslex.dll --unicode ../../Assignment2/HelloLex/hello2/hello2.fsl
+% dotnet fslex.dll --unicode ../../Assignment2/HelloLex/hello2/hello2.fsl
 compiling to dfas (can take a while...)
 4 states
 writing output
+%
 ```
 
 To run the program you must follow these steps:
@@ -120,11 +124,12 @@ Hello World from FsLex!
 Please pass a digit:
 234
 The lexer recognizes 234
+%
 ```
 
 </br>
 
-## HelloLex Question 5 - DONE
+## HelloLex Question 5
 
 Extend the lexer specification `hello2.fsl`to recognise numbers of more than one digit.
 New lexer specification is `hello3.fsl`.
@@ -135,10 +140,11 @@ Hint: You can use the regular expression `[+-]?([0-9]*[.])?[0-9]+` to recognize 
 **Answer:**
 
 ```fsharppc
-dotnet fslex.dll --unicode ../BPRD-02-OKRE-PEKP/Assignment2/HelloLex/hello3/hello3.fsl
+% dotnet fslex.dll --unicode ../../Assignment2/HelloLex/hello3/hello3.fsl
 compiling to dfas (can take a while...)
 10 states
 writing output
+%
 ```
 
 To run the program you must follow these steps:
@@ -157,6 +163,7 @@ Hello World from FsLex!
 Please pass a digit:
 34.34
 The lexer recognizes 34.34
+%
 ```
 
 </br>
@@ -192,6 +199,14 @@ The lexer recognises 34
 Explain why the results are expected behaviour from the lexer.
 
 **Answer:**
+
+The lexer recognises the expected behaviour according to how it's token recognition rules.
+
+The first recognises that `34` is a valid integer, therefore outputting `34`.
+
+The second recognises that `34.24` is a floating-point number, therefore outputting `34.24`.
+
+The third recognises that `34,34` uses a comma `,` and not a period `.`, therefore stops processing after `34` and outputting only `34`.
 
 </b>
 
