@@ -23,7 +23,7 @@ Has already been done and simply just compile provided `Machine.java` and run:
 Write a regular expression that recognises all sequences consisting of *a* and *b* where two *a*'s are always seperated by at least one *b*.
 For instance, these four strings are legal: *b*, *a*, *ba*, *ababbbaba*; but these two strings are illegal: *aa*, *babaa*.
 
-**Answer:** 
+**Answer:**
 
 ```regex
 (b|ab)*
