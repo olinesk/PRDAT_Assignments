@@ -76,6 +76,79 @@ Draw the above derivation as a tree.
 
 ![Tree](Appendix/tree.png)
 
+## PLC 3.5 - DONE
+
+Generate the lexer and parser for expressions by running `fslex` and `fsyacc`; then load the expression abstract syntax, the lexer and the parser modules, and the expression interpreter and compilers into an interactive F# session(`fsharpi`):
+
+```fsharppc
+dotnet fslex --unicode ExprLex.fsl
+dotnet fsyacc --module ExprPar ExprPar.fsy
+dotnet fsi -r FsLexYacc.Runtime.dll Absyn.fs ExprPar.fs ExprLex.fs Parse.fs
+```
+
+Try the parser on several example expressions, both well-formed and ill-formed ones:
+
+```fsharppc
+open Parse;;
+  fromString "1 + 2 * 3";;
+  fromString "1 - 2 - 3";;
+  fromString "1 + -2";;
+  fromString "x++";;
+  fromString "1 + 1.2";;
+  fromString "1 + ";;
+  fromString "let z = (17) in z + 2 * 3 end";;
+  fromString "let z = 17) in z + 2 * 3 end";;
+  fromString "let in = (17) in z + 2 * 3 end";;
+  fromString "1 + let x=5 in let y=7+x in y+y end + x end";;
+```
+
+**Running and observing:**
+
+[//]: <dotnet fsi -r FsLexYacc.Runtime.dll ../BPRD-03-OKRE-PEKP/Assignment3/Expr/Absyn.fs ../BPRD-03-OKRE-PEKP/Assignment3/Expr/ExprPar.fs ../BPRD-03-OKRE-PEKP/Assignment3/Expr/ExprLex.fs ../BPRD-03-OKRE-PEKP/Assignment3/Expr/Parse.fs (How to run on Oline's computer)>
+
+```fsharppc
+open Parse;;
+  fromString "1 + 2 * 3";;
+    val it: Absyn.expr = Prim ("+", CstI 1, Prim ("*", CstI 2, CstI 3))
+
+  fromString "1 - 2 - 3";;
+    val it: Absyn.expr = Prim ("-", Prim ("-", CstI 1, CstI 2), CstI 3)
+
+  fromString "1 + -2";;
+    val it: Absyn.expr = Prim ("+", CstI 1, CstI -2)
+
+  fromString "x++";;
+    System.Exception: parse error near line 1, column 3
+
+  fromString "1 + 1.2";;
+    System.Exception: Lexer error: illegal symbol near line 1, column 6
+
+  fromString "1 + ";;
+    System.Exception: parse error near line 1, column 4
+
+  fromString "let z = (17) in z + 2 * 3 end";;
+    val it: Absyn.expr = 
+        Let ("z", CstI 17, Prim ("+", Var "z", Prim ("*", CstI 2, CstI 3)))
+
+  fromString "let z = 17) in z + 2 * 3 end";;
+    System.Exception: parse error near line 1, column 11
+
+  fromString "let in = (17) in z + 2 * 3 end";;
+    System.Exception: parse error near line 1, column 6
+
+  fromString "1 + let x=5 in let y=7+x in y+y end + x end";;
+    val it: Absyn.expr =
+        Prim
+            ("+", CstI 1,
+            Let
+            ("x", CstI 5,
+                Prim
+                ("+",
+                Let
+                    ("y", Prim ("+", CstI 7, Var "x"), Prim ("+", Var "y", Var "y")),
+                Var "x")))
+```
+
 </b>
 
 ---
