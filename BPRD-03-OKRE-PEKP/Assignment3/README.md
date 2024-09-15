@@ -76,7 +76,7 @@ Draw the above derivation as a tree.
 
 [//]: < [Main [Expr [LET][NAME [z]][EQ [=]][Expr [LPAR [(]] [Expr[CSTINT ["17"]]] [RPAR[)]]] [IN] [Expr [Expr[Expr [NAME [z]]] [PLUS[+]] [Expr [CSTINT ["2"]]]] [TIMES [*]] [Expr [CSTINT ["3"]]]][END]][EOF]] (Drawing of tree line in generator)>
 
-![Tree](Appendix/tree.png)
+![Tree](Appendix/treeDone.png)
 
 ## PLC 3.5
 
