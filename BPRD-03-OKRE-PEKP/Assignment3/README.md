@@ -6,7 +6,7 @@ All non-code answers are in this file.
 
 ---
 
-## PLC 3.3 - DONE
+## PLC 3.3
 
 Write out the rightmost derivation of the string below from the expression grammar at the end of Sect. 3.6.5, corresponding to `ExprPar.fsy`.
 
@@ -66,7 +66,7 @@ String:
 >
 > $\overset{B}\rightarrow \text{\textbf{LET z EQ ( 17 ) IN z + 2 * 3 END EOF}}$
 
-## PLC 3.4 - DONE
+## PLC 3.4
 
 Draw the above derivation as a tree.
 
@@ -76,7 +76,7 @@ Draw the above derivation as a tree.
 
 ![Tree](Appendix/tree.png)
 
-## PLC 3.5 - DONE
+## PLC 3.5
 
 Generate the lexer and parser for expressions by running `fslex` and `fsyacc`; then load the expression abstract syntax, the lexer and the parser modules, and the expression interpreter and compilers into an interactive F# session(`fsharpi`):
 
@@ -149,7 +149,7 @@ open Parse;;
                 Var "x")))
 ```
 
-## PLC 3.6 - DONE
+## PLC 3.6
 
 Use the expression parser from `Parse.fs` and the compiler scomp (from expressions to stack machine instructions) and the associated datatypes from `Expr.fs`, to define a function `compString : string -> sinstr list` that parses a string as an expression and compiles it to stack machine code.
 
@@ -158,6 +158,24 @@ Use the expression parser from `Parse.fs` and the compiler scomp (from expressio
 See the bottom of `Expr.fs` file.
 
 ## PLC 3.7
+
+Extend the expression language abstract syntax and the lexer and parser specifications with conditional expressions. The abstract syntax should be `If(e1, e2, e3)`, so modify file `Absyn.fs` as well as `ExprLex.fsl` and file `ExprPar.fsy`.
+
+The concrete syntax may be the keyword-laden F#/ML-style:
+
+```fsharppc
+if e1 then e2 else e3
+```
+
+or the more light-weight C/C++/Java/C#-style:
+
+```fsharppc
+e1 ? e2 : e3
+```
+
+**Answer:**
+
+See files `Absyn.fs`, `ExprLex.fsl`, and `ExprPar.fsy` for answers.
 
 </b>
 
