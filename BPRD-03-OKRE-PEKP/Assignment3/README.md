@@ -65,6 +65,8 @@ String:
 > $\overset{C}\rightarrow \text{\textbf{LET NAME EQ ( 17 ) IN z + 2 * 3 END EOF}}$
 >
 > $\overset{B}\rightarrow \text{\textbf{LET z EQ ( 17 ) IN z + 2 * 3 END EOF}}$
+>
+> $\text{\textbf{LET z = ( 17 ) IN z + 2 * 3 END EOF}}$
 
 ## PLC 3.4
 
