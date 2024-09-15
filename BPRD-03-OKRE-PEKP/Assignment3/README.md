@@ -149,6 +149,16 @@ open Parse;;
                 Var "x")))
 ```
 
+## PLC 3.6 - DONE
+
+Use the expression parser from `Parse.fs` and the compiler scomp (from expressions to stack machine instructions) and the associated datatypes from `Expr.fs`, to define a function `compString : string -> sinstr list` that parses a string as an expression and compiles it to stack machine code.
+
+**Answer:**
+
+See the bottom of `Expr.fs` file.
+
+## PLC 3.7
+
 </b>
 
 ---
