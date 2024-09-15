@@ -66,11 +66,15 @@ String:
 >
 > $\overset{B}\rightarrow \text{\textbf{LET z EQ ( 17 ) IN z + 2 * 3 END EOF}}$
 
-## PLC 3.4
+## PLC 3.4 - DONE
 
 Draw the above derivation as a tree.
 
 **Answer:**
+
+[//]: < [Main [Expr [LET][NAME [z]][EQ [=]][Expr [LPAR [(]] [Expr[CSTINT ["17"]]] [RPAR[)]]][Expr [Expr[Expr [NAME [z]]] [PLUS[+]] [Expr [CSTINT ["2"]]]] [TIMES [*]] [Expr [CSTINT ["3"]]]][END]][EOF]] (Drawing of tree line in generator)>
+
+![Tree](Appendix/tree.png)
 
 </b>
 
