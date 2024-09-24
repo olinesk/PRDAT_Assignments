@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sexpr")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5bebaccf2e755e8e1c35e9209e130fb9e5751df0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47da8f1dc294081875435e14eba7fba6c45d7454")]
 [assembly: System.Reflection.AssemblyProductAttribute("sexpr")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sexpr")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
