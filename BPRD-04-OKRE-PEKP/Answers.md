@@ -10,6 +10,32 @@ All non-code answers are in this file.
 
 Generate and compile the lexer and parser as described in `README.TXT`; parse and run some example programs with `ParseAndRun.fs`.
 
+**A. Loading the micro-ML evaluator, with abstract syntax only:**
+
+```fsharp
+> open Absyn;;
+> open Fun;;  
+> let res = run (Prim("+", CstI 5, CstI 7));;
+val res: int = 12
+```
+
+**B. Generating and compiling the lexer and parser, and loading them:**
+
+```fsharp
+> open Parse;;
+> let e1 = fromString "5+7";;
+val e1: Absyn.expr = Prim ("+", CstI 5, CstI 7)
+
+> let e2 = fromString "let y = 7 in y + 2 end";;
+val e2: Absyn.expr = Let ("y", CstI 7, Prim ("+", Var "y", CstI 2))
+
+> let e3 = fromString "let f x = x + 7 in f 2 end";;
+val e3: Absyn.expr =
+  Letfun ("f", "x", Prim ("+", Var "x", CstI 7), Call (Var "f", CstI 2))
+```
+
+**C. Using the lexer, parser and first-order evaluator together:**
+
 ```fsharp
 > open ParseAndRun;;
 > run (fromString "5+7");;
