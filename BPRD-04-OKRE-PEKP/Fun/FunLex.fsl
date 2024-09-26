@@ -54,6 +54,8 @@ rule Token = parse
   | '*'             { TIMES }                     
   | '/'             { DIV }                     
   | '%'             { MOD }
+  | "&&"            { AND } // Exercise 4.5
+  | "||"            { OR } // Exercise 4.5
   | '('             { LPAR }
   | ')'             { RPAR }
   | eof             { EOF }
