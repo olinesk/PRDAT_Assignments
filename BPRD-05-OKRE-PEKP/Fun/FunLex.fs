@@ -1,5 +1,5 @@
 
-# 1 "FunLex.fsl"
+# 1 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
  
  (* File Fun/Funlex.fsl 
     Lexer for a simple functional language (micro-ML) 
@@ -35,7 +35,7 @@ let keyword s =
     | "true"  -> CSTBOOL true
     | _       -> NAME s
 
-# 38 "FunLex.fs"
+# 38 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
 let trans : uint16[] array = 
     [| 
     (* State 0 *)
@@ -106,135 +106,135 @@ let rec _fslex_dummy () = _fslex_dummy()
 and Token  lexbuf =
   match _fslex_tables.Interpret(7,lexbuf) with
   | 0 -> ( 
-# 38 "FunLex.fsl"
+# 38 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      Token lexbuf 
-# 111 "FunLex.fs"
+# 111 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 1 -> ( 
-# 39 "FunLex.fsl"
+# 39 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine; Token lexbuf 
-# 116 "FunLex.fs"
+# 116 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 2 -> ( 
-# 40 "FunLex.fsl"
+# 40 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      CSTINT (System.Int32.Parse (lexemeAsString lexbuf)) 
-# 121 "FunLex.fs"
+# 121 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 3 -> ( 
-# 42 "FunLex.fsl"
+# 42 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      keyword (lexemeAsString lexbuf) 
-# 126 "FunLex.fs"
+# 126 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 4 -> ( 
-# 43 "FunLex.fsl"
+# 43 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      commentStart := lexbuf.StartPos;
                                      commentDepth := 1; 
                                      SkipComment lexbuf; Token lexbuf 
-# 133 "FunLex.fs"
+# 133 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 5 -> ( 
-# 46 "FunLex.fsl"
+# 46 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      EQ 
-# 138 "FunLex.fs"
+# 138 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 6 -> ( 
-# 47 "FunLex.fsl"
+# 47 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      NE 
-# 143 "FunLex.fs"
+# 143 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 7 -> ( 
-# 48 "FunLex.fsl"
+# 48 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      GT 
-# 148 "FunLex.fs"
+# 148 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 8 -> ( 
-# 49 "FunLex.fsl"
+# 49 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      LT 
-# 153 "FunLex.fs"
+# 153 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 9 -> ( 
-# 50 "FunLex.fsl"
+# 50 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      GE 
-# 158 "FunLex.fs"
+# 158 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 10 -> ( 
-# 51 "FunLex.fsl"
+# 51 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      LE 
-# 163 "FunLex.fs"
+# 163 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 11 -> ( 
-# 52 "FunLex.fsl"
+# 52 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      PLUS 
-# 168 "FunLex.fs"
+# 168 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 12 -> ( 
-# 53 "FunLex.fsl"
+# 53 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      MINUS 
-# 173 "FunLex.fs"
+# 173 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 13 -> ( 
-# 54 "FunLex.fsl"
+# 54 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      TIMES 
-# 178 "FunLex.fs"
+# 178 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 14 -> ( 
-# 55 "FunLex.fsl"
+# 55 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      DIV 
-# 183 "FunLex.fs"
+# 183 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 15 -> ( 
-# 56 "FunLex.fsl"
+# 56 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      MOD 
-# 188 "FunLex.fs"
+# 188 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 16 -> ( 
-# 57 "FunLex.fsl"
+# 57 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      LPAR 
-# 193 "FunLex.fs"
+# 193 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 17 -> ( 
-# 58 "FunLex.fsl"
+# 58 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      RPAR 
-# 198 "FunLex.fs"
+# 198 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 18 -> ( 
-# 59 "FunLex.fsl"
+# 59 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      EOF 
-# 203 "FunLex.fs"
+# 203 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 19 -> ( 
-# 60 "FunLex.fsl"
+# 60 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      failwith "Lexer error: illegal symbol" 
-# 208 "FunLex.fs"
+# 208 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | _ -> failwith "Token"
 // Rule SkipComment
 and SkipComment  lexbuf =
   match _fslex_tables.Interpret(0,lexbuf) with
   | 0 -> ( 
-# 63 "FunLex.fsl"
+# 63 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      commentDepth := !commentDepth - 1;  
                                      if !commentDepth = 0 then ()
                                      else SkipComment lexbuf 
                                    
-# 220 "FunLex.fs"
+# 220 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 1 -> ( 
-# 67 "FunLex.fsl"
+# 67 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      commentDepth := !commentDepth + 1; 
                                      SkipComment lexbuf 
-# 226 "FunLex.fs"
+# 226 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 2 -> ( 
-# 69 "FunLex.fsl"
+# 69 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      failwith "Lexer error: unterminated comment" 
-# 231 "FunLex.fs"
+# 231 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | 3 -> ( 
-# 70 "FunLex.fsl"
+# 70 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fsl"
                                      SkipComment lexbuf 
-# 236 "FunLex.fs"
+# 236 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"
           )
   | _ -> failwith "SkipComment"
 
-# 3000000 "FunLex.fs"
+# 3000000 "../BPRD-05-OKRE-PEKP/Fun/FunLex.fs"

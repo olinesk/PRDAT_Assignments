@@ -52,7 +52,13 @@ See file `TypedFun.fs` in directory `TypedFun` for answer.
 ## Exercise 6.1
 
 **Build the micro-ML higher-order evaluator as described in file `README.TXT` point E.**
-**Then run the evaluator on the following four programs and explain the result of the last one:**
+**Then run the evaluator on the following four programs:**
+
+dotnet fsyacc.dll --module FunPar ../BPRD-05-OKRE-PEKP/Fun/FunPar.fsy
+
+dotnet fsi -r ~/Desktop/All_Assignments/fsharp/FsLexYacc.Runtime.dll ../BPRD-05-OKRE-PEKP/Fun/Util.fs ../BPRD-05-OKRE-PEKP/Fun/Absyn.fs ../BPRD-05-OKRE-PEKP/Fun/FunPar.fs ../BPRD-05-OKRE-PEKP/Fun/FunLex.fs ../BPRD-05-OKRE-PEKP/Fun/Parse.fs ../BPRD-05-OKRE-PEKP/Fun/HigherFun.fs ../BPRD-05-OKRE-PEKP/Fun/ParseAndRunHigher.fs
+
+**1.**
 
 ```fsharp
 let add x = let f y = x + y in f end
@@ -60,11 +66,31 @@ in add 2 5 end
 ```
 
 ```fsharp
+> open ParseAndRunHigher;;
+> run (fromString @"let add x = let f y = x + y in f end
+- in add 2 5 end");;
+val it: HigherFun.value = Int 7
+```
+
+**2.**
+
+```fsharp
 let add x = let f y = x + y in f end
 in let addtwo = add 2
     in addtwo 5 end
 end
 ```
+
+```fsharp
+> open ParseAndRunHigher;;
+> run (fromString @"let add x = let f y = x + y in f end
+- in let addtwo = add 2
+-     in addtwo 5 end
+- end");;
+val it: HigherFun.value = Int 7
+```
+
+**3.**
 
 ```fsharp
 let add x = let f y = x + y in f end
@@ -75,9 +101,43 @@ end
 ```
 
 ```fsharp
+> open ParseAndRunHigher;;
+> run (fromString @"let add x = let f y = x + y in f end
+- in let addtwo = add 2
+-     in let x = 77 in addtwo 5 end
+-     end
+- end");;
+val it: HigherFun.value = Int 7
+```
+
+**Is the result as expected?**
+
+Yes since the inner binding of `x = 77` is never used, because the returned function must enclose the value of `f`'s free variable `x`.
+
+**4.**
+
+```fsharp
 let add x = let f y = x + y in f end
 in add 2 end
 ```
+
+```fsharp
+> open ParseAndRunHigher;;
+> run (fromString @"let add x = let f y = x + y in f end
+- in add 2 end");;
+val it: HigherFun.value =
+  Closure
+    ("f", "y", Prim ("+", Var "x", Var "y"),
+     [("x", Int 2);
+      ("add",
+       Closure
+         ("add", "x", Letfun ("f", "y", Prim ("+", Var "x", Var "y"), Var "f"),
+          []))])
+```
+
+**Explain why the result is different:**
+
+The result is the return of a partial application of a function.
 
 </br>
 
