@@ -18,6 +18,8 @@ merge : int list * int list -> int list
 
 **that takes two sorted lists of integers and merges them into a sorted list of integers.**
 
+Check file `mergesort.fs` in directory `Exercise5_1` for answer.
+
 **(B) Implement a similar Java (or C#) method:**
 
 ```java
@@ -25,7 +27,9 @@ static int[] merge(int[] xs, int[] ys)
 ```
 
 **that takes two sorted arrays of ints and merges them into a sorted array of ints.**
-**The method should build a new array, and should net modify the given arrays.**
+**The method should build a new array, and should not modify the given arrays.**
+
+Check file `mergesort.java` in directory `Exercise5_1` for answer.
 
 </br>
 
