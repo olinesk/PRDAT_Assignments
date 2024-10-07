@@ -54,10 +54,6 @@ See file `TypedFun.fs` in directory `TypedFun` for answer.
 **Build the micro-ML higher-order evaluator as described in file `README.TXT` point E.**
 **Then run the evaluator on the following four programs:**
 
-dotnet fsyacc.dll --module FunPar ../BPRD-05-OKRE-PEKP/Fun/FunPar.fsy
-
-dotnet fsi -r ~/Desktop/All_Assignments/fsharp/FsLexYacc.Runtime.dll ../BPRD-05-OKRE-PEKP/Fun/Util.fs ../BPRD-05-OKRE-PEKP/Fun/Absyn.fs ../BPRD-05-OKRE-PEKP/Fun/FunPar.fs ../BPRD-05-OKRE-PEKP/Fun/FunLex.fs ../BPRD-05-OKRE-PEKP/Fun/Parse.fs ../BPRD-05-OKRE-PEKP/Fun/HigherFun.fs ../BPRD-05-OKRE-PEKP/Fun/ParseAndRunHigher.fs
-
 **1.**
 
 ```fsharp
@@ -222,15 +218,37 @@ in f 20 end
 **(1) Use the type inference on the micro-ML programs below, and report what type the program has.**
     **Some will fail because the programs are not typable in micro-ML; explain why.**
 
+**1.**
+
 ```fsharp
 let f x = 1
 in f f end
 ```
 
 ```fsharp
+> open ParseAndType;;
+> inferType (fromString "let f x = 1
+- in f f end");;
+val it: string = "int"
+```
+
+**2.**
+
+```fsharp
 let f g = g g
 in f end
 ```
+
+```fsharp
+> open ParseAndType;;
+> inferType (fromString "let f g = g g
+- in f end");;
+System.Exception: type error: circularity
+```
+
+The type definition of `g g` is infinitely recursive, so the type inference never stops infering to the type.
+
+**3.**
 
 ```fsharp
 let f x =
@@ -240,11 +258,35 @@ in f 42 end
 ```
 
 ```fsharp
+> open ParseAndType;;
+> inferType (fromString "let f x =
+-     let g y = y
+-     in g false end
+- in f 42 end");;
+val it: string = "bool"
+```
+
+**4.**
+
+```fsharp
 let f x = 
     let g y = if true then y else x
     in g false end
 in f 42 end
 ```
+
+```fsharp
+> open ParseAndType;;
+> inferType (fromString "let f x = 
+-     let g y = if true then y else x
+-     in g false end
+- in f 42 end");;
+System.Exception: type error: bool and int
+```
+
+The if-statement doesn't return the same type.
+
+**5.**
 
 ```fsharp
 let f x =
@@ -253,18 +295,124 @@ let f x =
 in f true end
 ```
 
+```fsharp
+> open ParseAndType;;
+> inferType (fromString "let f x =
+-     let g y = if true then y else x
+-     in g false end
+- in f true end");;
+val it: string = "bool"
+```
+
 **(2) Write micro-ML programs for which the micro-ML type inference report the following types:**
 
-- `bool -> bool`
-- `int -> int`
-- `int -> int -> int`
-- `´a -> ´b -> ´a`
-- `´a -> ´b -> ´b`
-- `(´a -> ´b) -> (´b -> ´c) -> (´a -> ´c)`
-- `´a -> ´b`
-- `´a`
+- **`bool -> bool`**
 
-Remember that the type arrow `(->)` is right associative, so `int -> int -> int` is the same as `int -> (int -> int)`, and that the choice of type variables does not matter, so the type scheme `´h -> ´g -> ´h` is the same as `´a -> ´b -> ´a`. **(REMOVE THIS BEFORE SUBMITTING!!!)**
+```fsharp
+let f x = if x then true else false in f end
+
+> open ParseAndType;;
+> inferType (fromString "let f x = if x then true else false in f end");;
+val it: string = "(bool -> bool)"
+```
+
+- **`int -> int`**
+
+```fsharp
+let f x = x + x in f end
+
+> open ParseAndType;;
+> inferType (fromString "let f x = x + x in f end");;
+val it: string = "(int -> int)"
+```
+
+- **`int -> int -> int`**
+
+```fsharp
+let f x = 
+    let g y = x + y 
+    in g end 
+in f end
+
+> open ParseAndType;;
+> inferType (fromString "let f x = 
+-     let g y = x + y 
+-     in g end 
+- in f end");;
+val it: string = "(int -> (int -> int))"
+```
+
+- **`´a -> ´b -> ´a`**
+
+```fsharp
+let f x = 
+    let g y = x
+    in g end
+in f end
+
+> open ParseAndType;;
+> inferType (fromString "let f x = 
+-     let g y = x
+-     in g end
+- in f end");;
+val it: string = "('h -> ('g -> 'h))"
+```
+
+- **`´a -> ´b -> ´b`**
+
+```fsharp
+let f x =
+    let g y = y
+    in g end
+in f end
+
+> open ParseAndType;;
+> inferType (fromString "let f x =
+-     let g y = y
+-     in g end
+- in f end");;
+val it: string = "('g -> ('h -> 'h))"
+```
+
+- **`(´a -> ´b) -> (´b -> ´c) -> (´a -> ´c)`**
+
+```fsharp
+let f x = 
+    let g y =
+        let h z = y (x z)
+        in h end
+    in g end
+in f end
+
+> open ParseAndType;;
+> inferType (fromString "let f x = 
+-     let g y =
+-         let h z = y (x z)
+-         in h end
+-     in g end
+- in f end");;
+val it: string = "(('l -> 'k) -> (('k -> 'm) -> ('l -> 'm)))"
+```
+
+- **`´a -> ´b`**
+
+```fsharp
+let f x = f x in f end
+
+> open ParseAndType;;
+> inferType (fromString "let f x = f x in f end");;
+val it: string = "('e -> 'f)"
+```
+
+- **`´a`**
+
+```fsharp
+let f x = f x in f x end
+
+> open ParseAndType;;
+> inferType (fromString "let f x = f 0 in f 0 end");;
+val it: string = "'e"
+```
 
 </b>
 
