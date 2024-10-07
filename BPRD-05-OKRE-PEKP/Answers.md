@@ -29,7 +29,7 @@ static int[] merge(int[] xs, int[] ys)
 **that takes two sorted arrays of ints and merges them into a sorted array of ints.**
 **The method should build a new array, and should not modify the given arrays.**
 
-Check file `mergesort.java` in directory `Exercise5_1` for answer.
+See file `mergesort.java` in directory `Exercise5_1` for answer.
 
 </br>
 
@@ -44,6 +44,8 @@ type typ =
     |TypL of typ        (* lists, element type is typ *)
     | ...
 ```
+
+See file `TypedFun.fs` in directory `TypedFun` for answer.
 
 </br>
 
