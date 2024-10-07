@@ -31,6 +31,7 @@ let keyword s =
     | "not"   -> NOT
     | "then"  -> THEN
     | "true"  -> CSTBOOL true
+    | "fun"   -> FUN      // Exercise 6.3
     | _       -> NAME s
 }
 
@@ -54,6 +55,7 @@ rule Token = parse
   | '*'             { TIMES }                     
   | '/'             { DIV }                     
   | '%'             { MOD }
+  | "->"            { ARROW }         // Exercise 6.3
   | '('             { LPAR }
   | ')'             { RPAR }
   | eof             { EOF }

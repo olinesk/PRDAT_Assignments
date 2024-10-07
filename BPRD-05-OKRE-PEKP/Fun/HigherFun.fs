@@ -70,12 +70,14 @@ let rec eval (e: expr) (env: value env) : value =
             let xVal = eval eArg env
             let fBodyEnv = (x, xVal) :: (f, fClosure) :: fDeclEnv in
             eval fBody fBodyEnv
+        (* Exercise 6.2 *)
         | Clos(x, fBody, fDeclEnv) ->
-          let xVal = eval eArg env
-          let fBodyEnv = (x, xVal) :: fDeclEnv
-          in eval fBody fBodyEnv
+            let xVal = eval eArg env
+            let fBodyEnv = (x, xVal) :: fDeclEnv in
+            eval fBody fBodyEnv
         | _ -> failwith "eval Call: not a function"
-    | Fun (x, fBody) -> Clos(x, fBody, env)
+    (* Exercise 6.2 *)
+    | Fun(x, fBody) -> Clos(x, fBody, env)
 
 (* Evaluate in empty environment: program must have no free variables: *)
 

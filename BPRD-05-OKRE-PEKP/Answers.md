@@ -191,6 +191,8 @@ See files `HigherFun.fs` and `Absyn.fs` in directory `Fun` for answers.
 
 **Extend the micro-ML lexer and parser specifications in `FunLex.fsl` and `FunPar.fsy` to permit anonymous functions.**
 
+See files `FunLex.fsl` and `FunPar.fsy` in directory `Fun` for answers.
+
 </br>
 
 ## Exercise 6.4
