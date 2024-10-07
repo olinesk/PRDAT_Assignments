@@ -58,7 +58,8 @@ type tyexpr =
 type value =
     | Int of int
     | Closure of string * string * tyexpr * value env (* (f, x, fBody, fDeclEnv) *)
-    | LstVal of value list * typ // Exercise 5.7
+    (* Exercise 5.7 *)
+    | LstVal of value list * typ
 
 let rec eval (e: tyexpr) (env: value env) : int =
     match e with

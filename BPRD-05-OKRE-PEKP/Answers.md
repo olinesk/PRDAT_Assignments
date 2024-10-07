@@ -152,7 +152,38 @@ type expr =
     | ...
 ```
 
+For instance, these two expressions in concrete syntax:
+
+```fsharp
+fun x -> 2 * x
+let y = 22 in fun z -> z + y end
+```
+
+should parse to these expressions in abstract syntax:
+
+```fsharp
+Fun("x", Prim("*", CstI 2, Var "x"))
+Let("y", CstI 22, Fun("z", Prim("+", Var "z", Var "y")))
+```
+
+Evaluation of a `Fun(...)` should produce a non-recursive closure of the form
+
+```fsharp
+type value =
+    | ...
+    | Clos of string * expr * value env     (* (x, body, declEnv) *)
+```
+
+In the empty environment the two expressions shown above should evaluate to these two closure values:
+
+```fsharp
+Clos("x", Prim("*", CstI 2, Var "x"), [])
+Clos("z", Prim("+", Var "z", Var "y"), [(y, 22)])
+```
+
 **Extend the evaluator `eval` in file `HigherFun.fs` to interpret such anonymous functions.**
+
+See files `HigherFun.fs` and `Absyn.fs` in directory `Fun` for answers.
 
 </br>
 
