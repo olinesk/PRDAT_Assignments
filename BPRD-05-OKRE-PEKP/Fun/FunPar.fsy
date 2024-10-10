@@ -11,13 +11,13 @@
 %token <string> NAME
 %token <bool> CSTBOOL
 
-%token ELSE END FALSE IF IN LET NOT THEN TRUE FUN ARROW   // Exercise 6.3
+%token ELSE END FALSE IF IN LET NOT THEN TRUE FUN ARROW           // Exercise 6.3
 %token PLUS MINUS TIMES DIV MOD
 %token EQ NE GT LT GE LE
 %token LPAR RPAR 
 %token EOF
 
-%left ARROW               // Exercise 6.3
+%left ARROW                                       // Exercise 6.3
 %left ELSE              /* lowest precedence  */
 %left EQ NE 
 %left GT LT GE LE

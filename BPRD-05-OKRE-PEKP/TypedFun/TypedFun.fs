@@ -90,6 +90,7 @@ let rec eval (e: tyexpr) (env: value env) : int =
     | Letfun(f, x, _, fBody, _, letBody) ->
         let bodyEnv = (f, Closure(f, x, fBody, env)) :: env
         eval letBody bodyEnv
+
     (* Exercise 5.7 *)
     | ListExpr(lst, t) ->
         let lst' = List.foldBack (fun x acc -> (eval x env) :: acc) lst []
@@ -144,6 +145,7 @@ let rec typ (e: tyexpr) (env: typ env) : typ =
             typ letBody letBodyEnv
         else
             failwith ("Letfun: return type in " + f)
+
     (* Exercise 5.7 *)
     | ListExpr(lst, t) ->
         let res = List.forall (fun x -> (typ x env) = t) lst

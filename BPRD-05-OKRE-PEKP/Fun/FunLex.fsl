@@ -31,7 +31,7 @@ let keyword s =
     | "not"   -> NOT
     | "then"  -> THEN
     | "true"  -> CSTBOOL true
-    | "fun"   -> FUN      // Exercise 6.3
+    | "fun"   -> FUN                // Exercise 6.3
     | _       -> NAME s
 }
 
