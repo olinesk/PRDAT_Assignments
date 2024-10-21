@@ -5,19 +5,14 @@ void histogram(int n, int ns[], int max, int freq[])
     int i;
     int c;
 
-    c = 0;
-    i = 0;
-
-    while (c <= max)
+    for (c = 0; c <= max; c = c + 1)
     {
         freq[c] = 0;
-        c = c + 1;
     }
 
-    while (i < n)
+    for (i = 0; i < n; i = i + 1)
     {
         freq[ns[i]] = freq[ns[i]] + 1;
-        i = i + 1;
     }
 }
 
@@ -40,10 +35,9 @@ void main(int n)
     int i;
     i = 0;
 
-    while (i <= 3)
+    for (i = 0; i <= 3; i = i + 1)
     {
         print freq[i];
-        i = i + 1;
     }
 
     println;

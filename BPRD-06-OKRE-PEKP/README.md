@@ -325,6 +325,31 @@ Go to directory `MicroC` and files `CLex.fsl` and `CPar.fsy` to see answer.
 
 Go to directory `7.3` and files `i.c`, `ii.c` and `iii.c` to see answer.
 
+```fsharp
+> open Interp;;
+> open ParseAndRun;;
+> run (fromFile "../7.3/i.c") [4];;
+37 
+val it: store =
+  map
+    [(-1, 37); (0, 4); (1, 7); (2, 13); (3, 9); (4, 8); (5, 1); (6, -1);
+     (7, 4); ...]
+
+> run (fromFile "../7.3/ii.c") [4];;
+14 
+val it: store =
+  map
+    [(-1, 14); (0, 4); (1, 0); (2, 1); (3, 4); (4, 9); (5, -999); (6, -999);
+     (7, -999); ...]
+
+> run (fromFile "../7.3/iii.c") [7];;
+1 4 2 0 
+val it: store =
+  map
+    [(0, 7); (1, 1); (2, 2); (3, 1); (4, 1); (5, 1); (6, 2); (7, 0); (8, 1);
+     ...]
+```
+
 </br>
 
 ## Exercise 7.4

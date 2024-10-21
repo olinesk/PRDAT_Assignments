@@ -3,12 +3,10 @@
 void squares(int n, int arr[])
 {
     int i;
-    i = 0;
 
-    while (i < n)
+    for(i = 0; i < n; i = i + 1)
     {
         arr[i] = i * i;
-        i = i + 1;
     }
 }
 
@@ -25,19 +23,15 @@ void main(int n)
     println;
 }
 
-// From exercise 7.2 (i)
 void arrsum(int n, int arr[], int *sump)
 {
     int i;
     int sum;
-
-    i = 0;
     sum = 0;
 
-    while (i < n)
+    for (i = 0; i < n; i = i + 1)
     {
         sum = sum + arr[i];
-        i = i + 1;
     }
 
     *sump = sum;
