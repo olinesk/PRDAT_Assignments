@@ -268,7 +268,18 @@ It does not work correctly (in micro-C or C) to stack-allocate the array in `his
 
 Your `main` function should print the contents of array `freq` after the call.
 
-<span style="color:red">*ANSWER HERE*</span>
+```fsharp
+> open Interp;;
+> open ParseAndRun;;
+> run (fromFile "../7.2/iii.c") [7];;
+1 4 2 0 
+val it: store =
+  map
+    [(0, 7); (1, 1); (2, 2); (3, 1); (4, 1); (5, 1); (6, 2); (7, 0); (8, 1);
+     ...]
+```
+
+Go to directory `7.2` and file `iii.c` to see function `histogram` and the corresponding `main` function.
 
 </br>
 
