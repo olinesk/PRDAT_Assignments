@@ -37,7 +37,7 @@ writing tables to log
         72 productions
         #rows in action table: 138
 
-dotnet fsi -r ~/Desktop/All_Assignments/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
 
 > open ParseAndRun;;
 > fromFile "ex1.c";;
@@ -319,11 +319,11 @@ is equivalent to a block:
 
 Hence it suffices to let the semantic action `...` in the parser construct abstract syntax using the existing `Block`, `While`, and `Expr` constructors from the `stmt` type.
 
-<span style="color:red">*ANSWER HERE*</span>
+Go to directory `MicroC` and files `CLex.fsl` and `CPar.fsy` to see answer.
 
 **Rewrite your programs from *7.2* to use for-loops instead of while-loops.**
 
-<span style="color:red">*ANSWER HERE*</span>
+Go to directory `7.3` and files `i.c`, `ii.c` and `iii.c` to see answer.
 
 </br>
 
