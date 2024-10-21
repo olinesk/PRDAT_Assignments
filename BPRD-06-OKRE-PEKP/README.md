@@ -294,10 +294,6 @@ for (i = 0; i < 100; i = i + 1)
 
 **Modify the lexer and parser specifications in `CLex.fsl` and `CPar.fsy`.**
 
-**Also extend the micro-C abstract syntax in `Absyn.fs` by defining a new statement constructor `Forloop` in the `stmt` type, and add a suitable case to the `exec` function in the interpreter.**
-
-With a modest amount of cleverness, no need to introduce special abstract syntax for for-loops, and need not modify the interpreter at all.
-
 Namely, a for-loop of the general form:
 
 ```fsharp
@@ -317,7 +313,7 @@ is equivalent to a block:
 }
 ```
 
-Hence it suffices to let the semantic action `...` in the parser construct abstract syntax using the existing `Block`, `While`, and `Expr` constructors from the `stmt` type.
+*Hence it suffices to let the semantic action `...` in the parser construct abstract syntax using the existing `Block`, `While`, and `Expr` constructors from the `stmt` type.*
 
 Go to directory `MicroC` and files `CLex.fsl` and `CPar.fsy` to see answer.
 
