@@ -195,14 +195,21 @@ Also remember to initialize all variables and array elements; this doesn't happe
 ```fsharp
 > open Interp;;
 > open ParseAndRun;;
-> run (fromFile "7.2/i.c") [2];;   
+> run (fromFile "../7.2/i.c") [2];;   
 20 
 val it: store =
   map
     [(-1, 20); (0, 2); (1, 7); (2, 13); (3, 9); (4, 8); (5, 1); (6, -1);
      (7, 2); ...]
 
-> run (fromFile "7.2/i.c") [4];;
+> run (fromFile "../7.2/i.c") [3];;
+29 
+val it: store =
+  map
+    [(-1, 29); (0, 3); (1, 7); (2, 13); (3, 9); (4, 8); (5, 1); (6, -1);
+     (7, 3); ...]
+
+> run (fromFile "../7.2/i.c") [4];;
 37 
 val it: store =
   map
@@ -216,7 +223,32 @@ Go to directory `7.2` and file `i.c` to see function `arrsum` and the correspond
 
 **Your `main` function should allocate an array holding up to 20 integers, call function `squares` to fill the array with `n` square numbers (where `n ≤ 20` is given as a parameter to the `main` function), then call function `arrsum` above to compute the sum of the `n` squares, and print the sum.**
 
-<span style="color:red">*ANSWER HERE*</span>
+```fsharp
+> open Interp;;   
+> open ParseAndRun;;
+> run (fromFile "../7.2/ii.c") [2];;
+1 
+val it: store =
+  map
+    [(-1, 1); (0, 2); (1, 0); (2, 1); (3, -999); (4, -999); (5, -999);
+     (6, -999); (7, -999); ...]
+
+> run (fromFile "../7.2/ii.c") [3];;
+5 
+val it: store =
+  map
+    [(-1, 5); (0, 3); (1, 0); (2, 1); (3, 4); (4, -999); (5, -999); (6, -999);
+     (7, -999); ...]
+
+> run (fromFile "../7.2/ii.c") [4];;
+14 
+val it: store =
+  map
+    [(-1, 14); (0, 4); (1, 0); (2, 1); (3, 4); (4, 9); (5, -999); (6, -999);
+     (7, -999); ...]
+```
+
+Go to directory `7.2` and file `ii.c` to see function `squares` and the corresponding `main` function.
 
 **(iii) Write a micro-C program containing a function `void histogram(int n, int ns[], int max, int freq[])` which fills array `freg` the frequencies of the numbers in array `ns`.**
 
