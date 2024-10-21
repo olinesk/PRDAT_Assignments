@@ -28,3 +28,11 @@
 /Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec05/MicroC/obj/Debug/net8.0/microcc.pdb
 /Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec05/MicroC/obj/Debug/net8.0/microcc.genruntimeconfig.cache
 /Users/nh/Library/CloudStorage/Dropbox/Documents/Work/ITU/Course/BPRD-E2024/Lectures/Lec05/MicroC/obj/Debug/net8.0/ref/microcc.dll
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/microcc.fsproj.AssemblyReference.cache
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/microcc.AssemblyInfoInputs.cache
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/microcc.AssemblyInfo.fs
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/microcc.fsproj.CoreCompileInputs.cache
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/microcc.sourcelink.json
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/microcc.dll
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/refint/microcc.dll
+/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/obj/Debug/net8.0/microcc.pdb

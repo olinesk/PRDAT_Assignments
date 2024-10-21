@@ -37,7 +37,7 @@ writing tables to log
         72 productions
         #rows in action table: 138
 
-dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+dotnet fsi -r ~/Desktop/All_Assignments/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
 
 > open ParseAndRun;;
 > fromFile "ex1.c";;
@@ -182,19 +182,35 @@ val it: Interp.store =
 
 Be careful: there is no type checking in the micro-C interpreter and nothing prevents you from overwriting arbitrary store locations by mistake, causing your program to produce unexpected results. (The type system of real C would catch some of those mistakes at compile time)
 
-<span style="color:red">*ANSWER HERE*</span>
-
 **(i) Write a micro-C program containing a function `void arrsum(int n, int arr[], int *sump)` that computes and returns the sum of the first `n` elements of the given array `arr`.**
 
 **The result must be returned through the `sump` pointer.**
 
 **The program's `main` function must create an array holding the four numbers 7, 13, 9, 8, call function `arrsum` on that array, and print the result using micro-C's non-standard `print` statement.**
 
-Remember that MicroC is very limited compared to actual C: You cannot use initializers in variable declarations like "`int i = 0;`" but must use a declaration followed by a statement, as in "`int i = 0;`" instead; there is no `for`-loop; and so on.
+Remember that MicroC is very limited compared to actual C: You cannot use initializers in variable declarations like "`int i = 0;`" but must use a declaration followed by a statement, as in "`int i; i = 0;`" instead; there is no `for`-loop; and so on.
 
 Also remember to initialize all variables and array elements; this doesn't happen automatically in micro-C or C.
 
-<span style="color:red">*ANSWER HERE*</span>
+```fsharp
+> open Interp;;
+> open ParseAndRun;;
+> run (fromFile "7.2/i.c") [2];;   
+20 
+val it: store =
+  map
+    [(-1, 20); (0, 2); (1, 7); (2, 13); (3, 9); (4, 8); (5, 1); (6, -1);
+     (7, 2); ...]
+
+> run (fromFile "7.2/i.c") [4];;
+37 
+val it: store =
+  map
+    [(-1, 37); (0, 4); (1, 7); (2, 13); (3, 9); (4, 8); (5, 1); (6, -1);
+     (7, 4); ...]
+```
+
+Go to directory `7.2` and file `i.c` to see function `arrsum` and the corresponding `main` function.
 
 **(ii) Write a micro-C program containing a function `void squares(int n, int arr[])` that, given `n` and an array `arr` of length `n` or more fills `arr[i]` with `i * i for i = 0, ..., n - 1`.**
 
