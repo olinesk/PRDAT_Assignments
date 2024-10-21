@@ -12,6 +12,8 @@ All non-code answers are in this file.
 
 **Run the `fromFile` parser on the mirco-C example in source file `ex1.c`.**
 
+**In your solution to the exercise, include the abstract syntax tree and indicate its parts: declarations, statements, types and expressions.**
+
 ```fsharp
 dotnet fslex.dll --unicode ../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl
 compiling to dfas (can take a while...)
@@ -42,26 +44,34 @@ dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs CPar.fs CLex.fs Pa
 val it: Absyn.program =
   Prog
     [Fundec
-       (None, "main", [(TypI, "n")],
-        Block
-          [Stmt
-             (While
+       (None, "main", [(TypI, "n")],                                        // Declaration of function "main"
+        Block                                                               // Type stmt "Block"
+          [Stmt                                                             // Statement
+             (While                                                         // Type stmt "While"
                 (Prim2 (">", Access (AccVar "n"), CstI 0),
-                 Block
+                 Block                                                      // Type stmt "Block"
                    [Stmt (Expr (Prim1 ("printi", Access (AccVar "n"))));
-                    Stmt
+                    Stmt                                                    // Type stmt "Expr"
                       (Expr
-                         (Assign
+                         (Assign                                            // Type expr "Assign"
                             (AccVar "n",
                              Prim2 ("-", Access (AccVar "n"), CstI 1))))]));
            Stmt (Expr (Prim1 ("printc", CstI 10)))])]
+```
 
+**Run the interpreter on some of the micro-C examples provided, such as those in source files `ex1.c` and `ex11.c`.**
+
+Note that both take an integer `n` as input.
+
+The former program prints the numbers from `n` down to 1; the latter finds all solutions to the `n`-queens problem.
+
+```fsharp
+dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs CPar.fs CLex.fs Parse.fs Interp.fs ParseAndRun.fs
+
+> open ParseAndRun;;
 > run (fromFile "ex1.c") [17];;
 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
 val it: Interp.store = map [(0, 0)]
-
-> run (fromFile "ex5.c") [4];;
-16 4 val it: Interp.store = map [(0, 4); (1, 4); (2, 16); (3, 4); (4, 2)]
 
 > run (fromFile "ex11.c") [8];;
 1 5 8 6 3 7 2 4 
@@ -161,18 +171,6 @@ val it: Interp.store =
     [(0, 8); (1, 0); (2, 9); (3, -999); (4, 0); (5, 0); (6, 0); (7, 0); (8, 0);
      ...]
 ```
-
-**In your solution to the exercise, include the abstract syntax tree and indicate its parts: declarations, statements, types and expressions.**
-
-
-
-**Run the interpreter on some of the micro-C examples provided, such as those in source files `ex1.c` and `ex11.c`.**
-
-**Note that both take an integer `n` as input.**
-
-**The former program prints the numbers from `n` down to 1; the latter finds all solutions to the `n`-queens problem.**
-
-<span style="color:red">*ANSWER HERE*</span>
 
 </br>
 
