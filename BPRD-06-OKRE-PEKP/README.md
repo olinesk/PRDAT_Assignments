@@ -361,15 +361,11 @@ type expr =
 
 Note that the predecrement and preincrement operators work on lvalues, that is, variables and array elements, and more generally on any expression that evaluates to a location.
 
-<span style="color:red">*ANSWER HERE*</span>
-
 **Modify the micro-C interpreter in `Interp.fs` to handle `PreInc` and `PreDec`.**
-
-<span style="color:red">*ANSWER HERE*</span>
 
 **Modify the `eval` function, and use the `getSto` and `setSto` store operations.**
 
-<span style="color:red">*ANSWER HERE*</span>
+Go to directory `MicroC` and see files `Absyn.fs` and `Interp.fs` for answer.
 
 </br>
 
