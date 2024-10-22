@@ -55,6 +55,8 @@ rule Token = parse
   | '-'             { MINUS } 
   | '*'             { TIMES } 
   | '/'             { DIV } 
+  | "++"            { INC }             // Exercise 7.5
+  | "--"            { DEC }             // Exercise 7.5
   | '%'             { MOD }                     
   | '='             { ASSIGN } 
   | "=="            { EQ } 

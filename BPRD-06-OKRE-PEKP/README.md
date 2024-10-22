@@ -373,7 +373,13 @@ Go to directory `MicroC` and see files `Absyn.fs` and `Interp.fs` for answer.
 
 **Extend the micro-C lexer and parser to accept ++e and -e also, and to buold the corresponding abstract syntax.**
 
-<span style="color:red">*ANSWER HERE*</span>
+Go to directory `MicroC` and see files `CPar.fsy` and `CLex.fsl` for answer.
+
+Go to directory `7.5` and see file `tests.c` for test code.
+
+```fsharp
+
+```
 
 </b>
 
