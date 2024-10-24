@@ -378,7 +378,13 @@ Go to directory `MicroC` and see files `CPar.fsy` and `CLex.fsl` for answer.
 Go to directory `7.5` and see file `tests.c` for test code.
 
 ```fsharp
-
+> run (fromFile "../7.5/tests.c") [4];;
+5         // Increment
+3         // Decrement
+5 4       // Both
+5         // Increment array
+3         // Decrement array
+val it: store = map [(0, 4); (1, 4); (2, 3); (3, 2)]
 ```
 
 </b>

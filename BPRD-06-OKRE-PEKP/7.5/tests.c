@@ -18,12 +18,14 @@ void combinedTest(int n)
     print --n;
     println;
 }
-/*
+
 void arrInc(int n)
 {
     int arr[1];
 
-    arr[0] = n = ++arr[0];
+    arr[0] = n; 
+    
+    ++arr[0];
 
     print arr[0];
     println;
@@ -33,19 +35,25 @@ void arrDec(int n)
 {
     int arr[1];
 
-    arr[0] = n = --arr[0];
+    arr[0] = n;
+    
+    --arr[0];
 
     print arr[0];
     println;
-}*/
+}
 
 void main(int n)
 {
     testInc(n);
+    
     testDec(n);
 
+    
     combinedTest(n);
 
-    /*arrInc(n);
-    arrDec(n);*/
+    
+    arrInc(n);
+    
+    arrDec(n);
 }
