@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "xEgXXksKXPg=",
+  "success": true,
+  "projectFilePath": "/Users/olinekrebs/Desktop/All_Assignments/BPRD-06-OKRE-PEKP/MicroC/microcc.fsproj",
+  "expectedPackageFiles": [
+    "/Users/olinekrebs/.nuget/packages/fsharp.core/8.0.400/fsharp.core.8.0.400.nupkg.sha512"
+  ],
+  "logs": []
+}
