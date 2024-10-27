@@ -3,7 +3,7 @@ module CPar
 #nowarn "64";; // turn off warnings that type variables used in production annotations are instantiated to concrete type
 open FSharp.Text.Lexing
 open FSharp.Text.Parsing.ParseHelpers
-# 1 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 1 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
 
 (*	File MicroC/CPar.fsy 
 	Parser specification for micro-C, a small imperative language
@@ -16,7 +16,7 @@ open Absyn
 let compose1 f (g, s) = ((fun x -> g(f(x))), s)
 let nl = CstI 10
 
-# 19 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 19 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
 // This type is the type of tokens accepted by the parser
 type token = 
   | INC
@@ -413,7 +413,7 @@ let _fsyacc_reductionSymbolCounts = [|1us;2us;0us;2us;2us;1us;2us;1us;2us;3us;3u
 let _fsyacc_productionToNonTerminalTable = [|0us;1us;2us;2us;3us;3us;4us;5us;5us;5us;5us;5us;6us;6us;7us;7us;8us;8us;9us;10us;10us;10us;11us;11us;12us;12us;12us;12us;12us;12us;12us;13us;13us;13us;13us;14us;14us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;15us;16us;16us;16us;17us;17us;17us;17us;17us;18us;18us;19us;19us;20us;20us;20us;20us;21us;21us;|]
 let _fsyacc_immediateActions = [|65535us;49152us;65535us;16385us;65535us;16387us;65535us;16388us;16389us;65535us;65535us;65535us;16391us;65535us;65535us;65535us;65535us;65535us;16393us;65535us;16394us;65535us;16395us;65535us;65535us;65535us;65535us;65535us;16396us;65535us;65535us;65535us;16397us;16399us;65535us;65535us;16401us;65535us;65535us;16402us;65535us;16404us;65535us;65535us;16405us;16406us;65535us;16407us;65535us;16408us;65535us;16409us;65535us;16410us;16411us;65535us;65535us;65535us;65535us;65535us;16412us;65535us;65535us;65535us;65535us;16413us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;16414us;16415us;16416us;16417us;16418us;65535us;65535us;16420us;65535us;16421us;65535us;65535us;65535us;65535us;65535us;16423us;65535us;65535us;65535us;65535us;16426us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;65535us;16442us;65535us;16443us;65535us;65535us;16445us;65535us;65535us;16446us;65535us;65535us;16448us;65535us;16449us;16451us;65535us;16453us;16454us;16455us;65535us;16456us;16457us;16458us;16459us;|]
 let _fsyacc_reductions = lazy [|
-# 416 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 416 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> Absyn.program in
             Microsoft.FSharp.Core.Operators.box
@@ -422,130 +422,130 @@ let _fsyacc_reductions = lazy [|
                       raise (FSharp.Text.Parsing.Accept(Microsoft.FSharp.Core.Operators.box _1))
                    )
                  : 'gentype__startMain));
-# 425 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 425 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Topdecs in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 43 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 43 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prog _1 
                    )
-# 43 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 43 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : Absyn.program));
-# 436 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 436 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 47 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 47 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                [] 
                    )
-# 47 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 47 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Topdecs));
-# 446 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 446 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Topdec in
             let _2 = parseState.GetInput(2) :?> 'gentype_Topdecs in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 48 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 48 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1 :: _2 
                    )
-# 48 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 48 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Topdecs));
-# 458 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 458 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Vardec in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 52 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 52 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Vardec (fst _1, snd _1) 
                    )
-# 52 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 52 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Topdec));
-# 469 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 469 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Fundec in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 53 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 53 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1 
                    )
-# 53 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 53 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Topdec));
-# 480 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 480 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Type in
             let _2 = parseState.GetInput(2) :?> 'gentype_Vardesc in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 57 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 57 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                ((fst _2) _1, snd _2) 
                    )
-# 57 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 57 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Vardec));
-# 492 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 492 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> string in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 61 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 61 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                ((fun t -> t), _1)                      
                    )
-# 61 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 61 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Vardesc));
-# 503 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 503 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Vardesc in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 62 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 62 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                compose1 TypP _2                        
                    )
-# 62 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 62 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Vardesc));
-# 514 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 514 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Vardesc in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 63 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 63 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _2                                      
                    )
-# 63 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 63 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Vardesc));
-# 525 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 525 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Vardesc in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 64 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 64 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                compose1 (fun t -> TypA(t, None)) _1    
                    )
-# 64 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 64 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Vardesc));
-# 536 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 536 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Vardesc in
             let _3 = parseState.GetInput(3) :?> int in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 65 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 65 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                compose1 (fun t -> TypA(t, Some _3)) _1 
                    )
-# 65 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 65 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Vardesc));
-# 548 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 548 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> string in
             let _4 = parseState.GetInput(4) :?> 'gentype_Paramdecs in
@@ -553,12 +553,12 @@ let _fsyacc_reductions = lazy [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 69 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 69 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Fundec(None,     _2, _4, _6) 
                    )
-# 69 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 69 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Fundec));
-# 561 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 561 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Type in
             let _2 = parseState.GetInput(2) :?> string in
@@ -567,166 +567,166 @@ let _fsyacc_reductions = lazy [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 70 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 70 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Fundec(Some(_1), _2, _4, _6) 
                    )
-# 70 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 70 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Fundec));
-# 575 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 575 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 74 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 74 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                [] 
                    )
-# 74 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 74 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Paramdecs));
-# 585 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 585 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Paramdecs1 in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 75 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 75 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1 
                    )
-# 75 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 75 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Paramdecs));
-# 596 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 596 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Vardec in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 79 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 79 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                [_1]     
                    )
-# 79 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 79 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Paramdecs1));
-# 607 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 607 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Vardec in
             let _3 = parseState.GetInput(3) :?> 'gentype_Paramdecs1 in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 80 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 80 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1 :: _3 
                    )
-# 80 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 80 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Paramdecs1));
-# 619 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 619 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_StmtOrDecSeq in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 84 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 84 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Block _2 
                    )
-# 84 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 84 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Block));
-# 630 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 630 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 88 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 88 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                [] 
                    )
-# 88 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 88 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtOrDecSeq));
-# 640 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 640 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Stmt in
             let _2 = parseState.GetInput(2) :?> 'gentype_StmtOrDecSeq in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 89 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 89 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Stmt _1 :: _2 
                    )
-# 89 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 89 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtOrDecSeq));
-# 652 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 652 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Vardec in
             let _3 = parseState.GetInput(3) :?> 'gentype_StmtOrDecSeq in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 90 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 90 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Dec (fst _1, snd _1) :: _3 
                    )
-# 90 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 90 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtOrDecSeq));
-# 664 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 664 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_StmtM in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 94 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 94 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1 
                    )
-# 94 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 94 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Stmt));
-# 675 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 675 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_StmtU in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 95 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 95 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1 
                    )
-# 95 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 95 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Stmt));
-# 686 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 686 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 99 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 99 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Expr(_1)             
                    )
-# 99 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 99 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtM));
-# 697 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 697 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 100 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 100 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Return None          
                    )
-# 100 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 100 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtM));
-# 707 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 707 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 101 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 101 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Return(Some(_2))     
                    )
-# 101 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 101 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtM));
-# 718 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 718 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Block in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 102 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 102 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1                   
                    )
-# 102 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 102 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtM));
-# 729 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 729 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             let _5 = parseState.GetInput(5) :?> 'gentype_StmtM in
@@ -734,24 +734,24 @@ let _fsyacc_reductions = lazy [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 103 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 103 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                If(_3, _5, _7)       
                    )
-# 103 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 103 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtM));
-# 742 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 742 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             let _5 = parseState.GetInput(5) :?> 'gentype_StmtM in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 104 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 104 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                While(_3, _5)        
                    )
-# 104 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 104 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtM));
-# 754 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 754 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             let _5 = parseState.GetInput(5) :?> 'gentype_Expr in
@@ -760,7 +760,7 @@ let _fsyacc_reductions = lazy [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 105 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 105 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                                              // Exercise 7.3
                          Block[
                            Stmt(Expr _3); 
@@ -771,9 +771,9 @@ let _fsyacc_reductions = lazy [|
                          ]
                        
                    )
-# 105 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 105 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtM));
-# 776 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 776 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             let _5 = parseState.GetInput(5) :?> 'gentype_StmtM in
@@ -781,36 +781,36 @@ let _fsyacc_reductions = lazy [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 117 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 117 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                If(_3, _5, _7)       
                    )
-# 117 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 117 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtU));
-# 789 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 789 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             let _5 = parseState.GetInput(5) :?> 'gentype_Stmt in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 118 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 118 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                If(_3, _5, Block []) 
                    )
-# 118 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 118 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtU));
-# 801 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 801 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             let _5 = parseState.GetInput(5) :?> 'gentype_StmtU in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 119 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 119 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                While(_3, _5)        
                    )
-# 119 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 119 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtU));
-# 813 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 813 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             let _5 = parseState.GetInput(5) :?> 'gentype_Expr in
@@ -819,7 +819,7 @@ let _fsyacc_reductions = lazy [|
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 120 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 120 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                                            // Exercise 7.3
                          Block[
                            Stmt(Expr _3); 
@@ -830,473 +830,473 @@ let _fsyacc_reductions = lazy [|
                          ]
                        
                    )
-# 120 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 120 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_StmtU));
-# 835 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 835 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Access in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 132 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 132 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Access _1           
                    )
-# 132 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 132 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Expr));
-# 846 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 846 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_ExprNotAccess in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 133 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 133 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1                  
                    )
-# 133 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 133 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Expr));
-# 857 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 857 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_AtExprNotAccess in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 137 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 137 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1                  
                    )
-# 137 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 137 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 868 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 868 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Access in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 138 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 138 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Assign(_1, _3)      
                    )
-# 138 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 138 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 880 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 880 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> string in
             let _3 = parseState.GetInput(3) :?> 'gentype_Exprs in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 139 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 139 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Call(_1, _3)        
                    )
-# 139 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 139 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 892 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 892 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 140 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 140 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim1("!", _2)      
                    )
-# 140 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 140 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 903 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 903 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 141 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 141 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim1("printi", _2) 
                    )
-# 141 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 141 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 914 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 914 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 142 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 142 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim1("printc", nl) 
                    )
-# 142 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 142 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 924 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 924 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 143 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 143 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("+",  _1, _3) 
                    )
-# 143 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 143 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 936 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 936 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 144 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 144 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("-",  _1, _3) 
                    )
-# 144 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 144 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 948 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 948 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 145 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 145 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("*",  _1, _3) 
                    )
-# 145 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 145 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 960 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 960 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 146 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 146 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("/",  _1, _3) 
                    )
-# 146 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 146 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 972 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 972 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Access in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 147 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 147 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                PreInc(_2)          
                    )
-# 147 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 147 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 983 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 983 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Access in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 148 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 148 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                PreDec(_2)          
                    )
-# 148 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 148 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 994 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 994 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 149 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 149 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("%",  _1, _3) 
                    )
-# 149 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 149 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1006 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1006 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 150 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 150 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("==", _1, _3) 
                    )
-# 150 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 150 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1018 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1018 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 151 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 151 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("!=", _1, _3) 
                    )
-# 151 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 151 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1030 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1030 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 152 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 152 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2(">",  _1, _3) 
                    )
-# 152 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 152 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1042 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1042 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 153 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 153 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("<",  _1, _3) 
                    )
-# 153 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 153 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1054 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1054 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 154 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 154 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2(">=", _1, _3) 
                    )
-# 154 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 154 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1066 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1066 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 155 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 155 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Prim2("<=", _1, _3) 
                    )
-# 155 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 155 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1078 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1078 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 156 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 156 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Andalso(_1, _3)     
                    )
-# 156 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 156 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1090 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1090 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 157 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 157 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Orelse(_1, _3)      
                    )
-# 157 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 157 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_ExprNotAccess));
-# 1102 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1102 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Const in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 161 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 161 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                CstI _1             
                    )
-# 161 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 161 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_AtExprNotAccess));
-# 1113 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1113 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_ExprNotAccess in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 162 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 162 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _2                  
                    )
-# 162 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 162 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_AtExprNotAccess));
-# 1124 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1124 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Access in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 163 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 163 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                Addr _2             
                    )
-# 163 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 163 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_AtExprNotAccess));
-# 1135 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1135 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> string in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 167 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 167 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                AccVar _1           
                    )
-# 167 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 167 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Access));
-# 1146 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1146 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Access in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 168 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 168 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _2                  
                    )
-# 168 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 168 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Access));
-# 1157 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1157 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_Access in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 169 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 169 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                AccDeref (Access _2)
                    )
-# 169 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 169 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Access));
-# 1168 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1168 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> 'gentype_AtExprNotAccess in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 170 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 170 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                AccDeref _2         
                    )
-# 170 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 170 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Access));
-# 1179 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1179 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Access in
             let _3 = parseState.GetInput(3) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 171 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 171 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                AccIndex(_1, _3)    
                    )
-# 171 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 171 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Access));
-# 1191 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1191 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 175 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 175 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                []       
                    )
-# 175 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 175 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Exprs));
-# 1201 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1201 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Exprs1 in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 176 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 176 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1       
                    )
-# 176 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 176 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Exprs));
-# 1212 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1212 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 180 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 180 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                [_1]     
                    )
-# 180 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 180 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Exprs1));
-# 1223 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1223 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> 'gentype_Expr in
             let _3 = parseState.GetInput(3) :?> 'gentype_Exprs1 in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 181 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 181 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1 :: _3 
                    )
-# 181 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 181 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Exprs1));
-# 1235 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1235 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> int in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 185 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 185 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1       
                    )
-# 185 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 185 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Const));
-# 1246 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1246 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _1 = parseState.GetInput(1) :?> int in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 186 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 186 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                _1       
                    )
-# 186 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 186 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Const));
-# 1257 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1257 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             let _2 = parseState.GetInput(2) :?> int in
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 187 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 187 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                - _2     
                    )
-# 187 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 187 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Const));
-# 1268 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1268 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 188 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 188 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                -1       
                    )
-# 188 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 188 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Const));
-# 1278 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1278 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 192 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 192 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                TypI     
                    )
-# 192 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 192 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Type));
-# 1288 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1288 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
         (fun (parseState : FSharp.Text.Parsing.IParseState) ->
             Microsoft.FSharp.Core.Operators.box
                 (
                    (
-# 193 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 193 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                                                                TypC     
                    )
-# 193 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fsy"
+# 193 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fsy"
                  : 'gentype_Type));
 |]
-# 1299 "../BPRD-06-OKRE-PEKP/MicroC/CPar.fs"
+# 1299 "../BPRD-07-OKRE-PEKP/MicroC/CPar.fs"
 let tables : FSharp.Text.Parsing.Tables<_> = 
   { reductions = _fsyacc_reductions.Value;
     endOfInputTag = _fsyacc_endOfInputTag;

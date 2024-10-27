@@ -1,5 +1,5 @@
 
-# 1 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 1 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
  
  (* File MicroC/CLex.lex
     Lexer specification for micro-C, a small imperative language
@@ -46,7 +46,7 @@ let cEscape s =
     | "\\r"  -> '\r'
     | _      -> failwith "Lexer error: impossible C escape"
 
-# 49 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 49 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
 let trans : uint16[] array = 
     [| 
     (* State 0 *)
@@ -185,272 +185,272 @@ let rec _fslex_dummy () = _fslex_dummy()
 and Token  lexbuf =
   match _fslex_tables.Interpret(25,lexbuf) with
   | 0 -> ( 
-# 49 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 49 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      Token lexbuf 
-# 190 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 190 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 50 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 50 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine; Token lexbuf 
-# 195 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 195 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 51 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 51 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      CSTINT (System.Int32.Parse (lexemeAsString lexbuf)) 
-# 200 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 200 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 53 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 53 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      keyword (lexemeAsString lexbuf) 
-# 205 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 205 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 54 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 54 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      PLUS 
-# 210 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 210 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 5 -> ( 
-# 55 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 55 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      MINUS 
-# 215 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 215 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 6 -> ( 
-# 56 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 56 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      TIMES 
-# 220 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 220 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 7 -> ( 
-# 57 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 57 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      DIV 
-# 225 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 225 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 8 -> ( 
-# 58 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 58 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      INC 
-# 230 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 230 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 9 -> ( 
-# 59 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 59 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      DEC 
-# 235 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 235 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 10 -> ( 
-# 60 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 60 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      MOD 
-# 240 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 240 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 11 -> ( 
-# 61 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 61 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      ASSIGN 
-# 245 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 245 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 12 -> ( 
-# 62 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 62 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      EQ 
-# 250 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 250 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 13 -> ( 
-# 63 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 63 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      NE 
-# 255 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 255 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 14 -> ( 
-# 64 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 64 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      GT 
-# 260 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 260 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 15 -> ( 
-# 65 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 65 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      LT 
-# 265 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 265 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 16 -> ( 
-# 66 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 66 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      GE 
-# 270 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 270 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 17 -> ( 
-# 67 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 67 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      LE 
-# 275 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 275 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 18 -> ( 
-# 68 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 68 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      SEQOR 
-# 280 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 280 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 19 -> ( 
-# 69 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 69 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      SEQAND 
-# 285 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 285 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 20 -> ( 
-# 70 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 70 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      AMP 
-# 290 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 290 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 21 -> ( 
-# 71 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 71 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      NOT 
-# 295 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 295 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 22 -> ( 
-# 72 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 72 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      LPAR 
-# 300 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 300 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 23 -> ( 
-# 73 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 73 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      RPAR 
-# 305 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 305 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 24 -> ( 
-# 74 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 74 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      LBRACE 
-# 310 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 310 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 25 -> ( 
-# 75 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 75 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      RBRACE 
-# 315 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 315 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 26 -> ( 
-# 76 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 76 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      LBRACK 
-# 320 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 320 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 27 -> ( 
-# 77 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 77 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      RBRACK 
-# 325 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 325 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 28 -> ( 
-# 78 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 78 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      SEMI 
-# 330 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 330 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 29 -> ( 
-# 79 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 79 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      COMMA 
-# 335 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 335 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 30 -> ( 
-# 80 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 80 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      EndLineComment lexbuf; Token lexbuf 
-# 340 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 340 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 31 -> ( 
-# 81 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 81 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      Comment lexbuf; Token lexbuf 
-# 345 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 345 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 32 -> ( 
-# 82 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 82 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      CSTSTRING (String [] lexbuf) 
-# 350 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 350 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 33 -> ( 
-# 83 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 83 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      EOF 
-# 355 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 355 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 34 -> ( 
-# 84 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 84 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      failwith "Lexer error: illegal symbol" 
-# 360 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 360 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | _ -> failwith "Token"
 // Rule Comment
 and Comment  lexbuf =
   match _fslex_tables.Interpret(16,lexbuf) with
   | 0 -> ( 
-# 87 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 87 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      Comment lexbuf; Comment lexbuf 
-# 369 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 369 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 88 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 88 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      () 
-# 374 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 374 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 89 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 89 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine; Comment lexbuf 
-# 379 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 379 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 90 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 90 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      failwith "Lexer error: unterminated comment" 
-# 384 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 384 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 91 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 91 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      Comment lexbuf 
-# 389 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 389 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | _ -> failwith "Comment"
 // Rule EndLineComment
 and EndLineComment  lexbuf =
   match _fslex_tables.Interpret(11,lexbuf) with
   | 0 -> ( 
-# 94 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 94 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      lexbuf.EndPos <- lexbuf.EndPos.NextLine 
-# 398 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 398 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 95 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 95 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      () 
-# 403 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 403 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 96 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 96 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                                      EndLineComment lexbuf 
-# 408 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 408 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | _ -> failwith "EndLineComment"
 // Rule String
 and String chars lexbuf =
   match _fslex_tables.Interpret(0,lexbuf) with
   | 0 -> ( 
-# 100 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 100 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        Microsoft.FSharp.Core.String.concat "" (List.map string (List.rev chars)) 
-# 417 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 417 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 1 -> ( 
-# 102 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 102 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        String (cEscape (lexemeAsString lexbuf) :: chars) lexbuf 
-# 422 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 422 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 2 -> ( 
-# 104 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 104 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        String ('\'' :: chars) lexbuf 
-# 427 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 427 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 3 -> ( 
-# 106 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 106 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        failwith "Lexer error: illegal escape sequence" 
-# 432 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 432 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 4 -> ( 
-# 108 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 108 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        failwith "Lexer error: unterminated string" 
-# 437 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 437 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 5 -> ( 
-# 110 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 110 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        failwith "Lexer error: newline in string" 
-# 442 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 442 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 6 -> ( 
-# 112 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 112 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        failwith "Lexer error: invalid character in string" 
-# 447 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 447 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | 7 -> ( 
-# 114 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fsl"
+# 114 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fsl"
                        String (char (lexbuf.LexemeChar 0) :: chars) lexbuf 
-# 452 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 452 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
           )
   | _ -> failwith "String"
 
-# 3000000 "../BPRD-06-OKRE-PEKP/MicroC/CLex.fs"
+# 3000000 "../BPRD-07-OKRE-PEKP/MicroC/CLex.fs"
