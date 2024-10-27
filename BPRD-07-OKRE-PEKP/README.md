@@ -169,117 +169,42 @@ val it: Machine.instr list =
 
 **Write the corresponding micro-C code to the right of the stack machine code.**
 
-Note that `ex5.c` has a nested scope (a block ... inside a function body); how is that visible in the generated code?
-
 ```txt
-ex3
+Symbolic bytecode for ex3.c
 
-LDARGS 
-  CALL 1 "L1"
-  STOP
-  L1:
-    INCSP 1
-    GETBP
-    CSTI 1
-    ADD
-    CSTI 0
-    STI
-    INCSP -1
-    GOTO "L3"
-  L2:
-    GETBP
-    CSTI 1
-    ADD
-    LDI
-    PRINTI
-    INCSP -1
-    GETBP
-    CSTI 1
-    ADD
-    GETBP
-    CSTI 1
-    ADD
-    LDI
-    CSTI 1
-    ADD
-    STI
-    INCSP -1
-    INCSP 0
-  L3:
-    GETBP
-    CSTI 1
-    ADD
-    LDI
-    GETBP
-    CSTI 0
-    ADD
-    LDI
-    LT
-    IFNZRO "L2"
-    INCSP -1
-    RET 0
+[LDARGS; CALL (1, "L1"); STOP;                    // main(args[1])
+Label "L1"; INCSP 1; GETBP; CSTI 1; ADD;          // int i
+            CSTI 0; STI;                          // i = 0
+            INCSP -1; GOTO "L3";                  // while (i < n)
+Label "L2"; GETBP; CSTI 1; ADD; LDI; PRINTI;      // print i
+            INCSP -1; GETBP; CSTI 1; ADD;         // 
+            GETBP; CSTI 1; ADD; LDI; 
+            CSTI 1; ADD; STI; 
+            INCSP -1; 
+            INCSP 0; 
+Label "L3"; GETBP; CSTI 1; ADD; LDI; 
+            GETBP; CSTI 0; ADD; LDI;
+            LT; 
+            IFNZRO "L2"; 
+            INCSP -1; RET 0]
 ```
 
 ```txt
-ex5
+Symbolic bytecode for ex5.c
 
-LDARGS
-CALL 1 "L1"
-STOP
-L1:
-  INCSP 1
-  GETBP
-  CSTI 1
-  ADD
-  GETBP
-  CSTI 0
-  ADD
-  LDI
-  STI
-  INCSP -1
-  INCSP 1
-  GETBP
-  CSTI 0
-  ADD
-  LDI
-  GETBP
-  CSTI 2
-  ADD
-  CALL 2 "L2"
-  INCSP -1
-  GETBP
-  CSTI 2
-  ADD
-  LDI
-  PRINTI
-  INCSP -1
-  INCSP -1
-  GETBP
-  CSTI 1
-  ADD
-  LDI
-  PRINTI
-  INCSP -1
-  INCSP -1
-  RET 0
-L2: 
-  GETBP
-  CSTI 1
-  ADD
-  LDI
-  GETBP
-  CSTI 0
-  ADD
-  LDI
-  GETBP
-  CSTI 0
-  ADD
-  LDI
-  MUL
-  STI
-  INCSP -1
-  INCSP 0
-  RET 1
+[LDARGS; CALL (1, "L1"); STOP; 
+Label "L1"; INCSP 1; GETBP; CSTI 1; ADD;
+            GETBP; CSTI 0; ADD; LDI; STI; INCSP -1; 
+            INCSP 1; GETBP; CSTI 0; ADD; LDI;
+            GETBP; CSTI 2; ADD; CALL (2, "L2"); INCSP -1; 
+            GETBP; CSTI 2; ADD; LDI; PRINTI; INCSP -1; INCSP -1; 
+            GETBP; CSTI 1; ADD; LDI; PRINTI; INCSP -1;
+            INCSP -1; RET 0; 
+Label "L2"; GETBP; CSTI 1; ADD; LDI; 
+            GETBP; CSTI 0; ADD; LDI; 
+            GETBP; CSTI 0; ADD; LDI; 
+            MUL; STI; INCSP -1; 
+            INCSP 0; RET 1]
 ```
 
 **Execute the compiled programs using `java Machine ex3.out 10` and similar.**
@@ -462,9 +387,43 @@ For instance, `++i` should compile to something like this:
 
 where the address of `i` is computed once and then duplicated.
 
+Go to directory `MicroC` and see file `Comp.fs` for modified code.
+
 **Write a program to check that this works.**
 
-Try it on expressions of the form `++arr[++i]` and check that `i` and the elements of `arr` have the correct values afterwards.
+Go to directory `8.3` and see file `tests.c` for program.
+
+First compile the program:
+
+```fsharp
+> open ParseAndComp;;
+> compile "../8.3/tests";;
+val it: Machine.instr list =
+  [LDARGS; CALL (1, "L7"); STOP; Label "L1"; GETBP; CSTI 0; ADD; DUP; LDI;
+   CSTI 1; ADD; STI; PRINTI; INCSP -1; CSTI 10; PRINTC; INCSP -1; INCSP 0;
+   RET 0; Label "L2"; GETBP; CSTI 0; ADD; DUP; LDI; CSTI 1; SUB; STI; PRINTI;
+   INCSP -1; CSTI 10; PRINTC; INCSP -1; INCSP 0; RET 0; Label "L3"; INCSP 1;
+   GETSP; CSTI 0; SUB; GETBP; CSTI 2; ADD; LDI; CSTI 0; ADD; GETBP; CSTI 0;
+   ADD; LDI; STI; INCSP -1; GETBP; CSTI 2; ADD; LDI; CSTI 0; ADD; DUP; LDI;
+   CSTI 1; ADD; STI; INCSP -1; GETBP; CSTI 2; ADD; LDI; CSTI 0; ADD; LDI;
+   PRINTI; INCSP -1; CSTI 10; PRINTC; INCSP -1; INCSP -2; RET 0; Label "L4";
+   INCSP 1; GETSP; CSTI 0; SUB; GETBP; CSTI 2; ADD; LDI; CSTI 0; ADD; GETBP;
+   CSTI 0; ADD; LDI; STI; INCSP -1; GETBP; CSTI 2; ADD; LDI; CSTI 0; ...]
+```
+
+Then run program with `Machine.java`:
+
+```java
+java Machine ../8.3/tests.out 3
+4 
+2 
+4 
+2 
+5 
+7 
+
+Ran 0.018 seconds
+```
 
 </br>
 
