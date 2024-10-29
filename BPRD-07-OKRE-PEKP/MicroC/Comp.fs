@@ -209,6 +209,17 @@ and cExpr (e : expr) (varEnv : varEnv) (funEnv : funEnv) : instr list =
     (* Exercise 8.3 *)
     | PreInc acc -> cAccess acc varEnv funEnv @ [DUP; LDI; CSTI 1; ADD; STI]
     | PreDec acc -> cAccess acc varEnv funEnv @ [DUP; LDI; CSTI 1; SUB; STI]
+    (* Exercise 8.5 *)
+    | TernaryOp (e1, e2, e3) -> 
+      let labFalse = newLabel()
+      let labEnd = newLabel()
+      cExpr e1 varEnv funEnv @ 
+      [IFZERO labFalse] @ 
+      cExpr e2 varEnv funEnv @ 
+      [GOTO labEnd] @ 
+      [Label labFalse] @ 
+      cExpr e3 varEnv funEnv @ 
+      [Label labEnd]
 
 (* Generate code to access variable, dereference pointer or index array.
    The effect of the compiled code is to leave an lvalue on the stack.   *)

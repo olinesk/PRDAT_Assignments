@@ -77,6 +77,8 @@ rule Token = parse
   | ']'             { RBRACK }
   | ';'             { SEMI }
   | ','             { COMMA }
+  | ':'             { COLON }               // Exercise 8.5
+  | '?'             { QUESTIONMARK }        // Exercise 8.5
   | "//"            { EndLineComment lexbuf; Token lexbuf }
   | "/*"            { Comment lexbuf; Token lexbuf }
   | '"'             { CSTSTRING (String [] lexbuf) }

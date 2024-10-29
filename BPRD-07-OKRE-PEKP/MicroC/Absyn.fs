@@ -26,6 +26,8 @@ and expr =
   (* Exercise 7.4 *)
   | PreInc of access                 (* C/C++/Java/C# ++i or ++a[e] *)
   | PreDec of access                 (* C/C++/Java/C# --i or --a[e] *)
+  (* Exercise 8.5 *)
+  | TernaryOp of expr * expr * expr    (* Ternary operator e1 ? e2 : e3 *)
                                                                    
 and access =                                                       
   | AccVar of string                 (* Variable access        x    *) 

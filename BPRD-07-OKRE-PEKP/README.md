@@ -584,9 +584,24 @@ Labels like, `L2` `L3` `L7`, allow for organised handling of the nested conditio
 
 **Extend the micro-C language, *the abstract syntax*, *the lexer*, *the parser*, and *the compiler* to implement conditional expressions of the form `(e1 ? e2 : e3)`.**
 
-The compilation of `e1 ? e2 : e3` should produce code that evaluates `e2` only if `e1` is true and evaluates `e3` only if `e1` is false.
+Go to directory `MicroC` and see files `Absyn.fs`, `CLex.fsl`, `CPar.fsy` and `Comp.fs` for answer.
 
-The compilation scheme should be the same as for the conditional statement `if (e) stmt1 else stmt2`, but expression `e2` or expression `e3` must leave its value on the stack top if evaluated, so that the entire expressions `e1 ? e2 : e3` leaves its value on the stack top.
+```fsharp
+> open ParseAndComp;;
+> compile "../8.5/ternary";;
+val it: Machine.instr list =
+  [LDARGS; CALL (0, "L1"); STOP; Label "L1"; INCSP 1; GETBP; CSTI 0; ADD;
+   CSTI 2; CSTI 3; EQ; IFZERO "L2"; CSTI 4; GOTO "L3"; Label "L2"; CSTI 5;
+   Label "L3"; STI; INCSP -1; GETBP; CSTI 0; ADD; LDI; PRINTI; INCSP -1;
+   CSTI 10; PRINTC; INCSP -1; INCSP -1; RET -1]
+```
+
+```java
+java Machine ../8.5/ternary.out
+5 
+
+Ran 0.019 seconds
+```
 
 </br>
 
