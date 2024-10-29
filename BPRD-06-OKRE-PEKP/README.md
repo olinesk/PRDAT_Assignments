@@ -44,17 +44,17 @@ dotnet fsi -r ~/fsharp/FsLexYacc.Runtime.dll Util.fs Absyn.fs CPar.fs CLex.fs Pa
 val it: Absyn.program =
   Prog
     [Fundec
-       (None, "main", [(TypI, "n")],                                        // Declaration of function "main"
+       (None, "main", [(TypI, "n")],                                        // Declaration of function "main" and type typ "TypI"
         Block                                                               // Type stmt "Block"
           [Stmt                                                             // Statement
              (While                                                         // Type stmt "While"
-                (Prim2 (">", Access (AccVar "n"), CstI 0),
+                (Prim2 (">", Access (AccVar "n"), CstI 0),                  // Type expr "Prim2", "Access", "CstI" and type access "AccVar"
                  Block                                                      // Type stmt "Block"
-                   [Stmt (Expr (Prim1 ("printi", Access (AccVar "n"))));
-                    Stmt                                                    // Type stmt "Expr"
-                      (Expr
+                   [Stmt (Expr (Prim1 ("printi", Access (AccVar "n"))));    // Type stmtordec "Stmt", type stmt "Expr", type expr "Prim2" and "Access" and type access "AccVar"
+                    Stmt                                                    // Type stmtordec "Stmt"
+                      (Expr                                                 // Type stmt "Expr"
                          (Assign                                            // Type expr "Assign"
-                            (AccVar "n",
+                            (AccVar "n",                                    // Type access "AccVar"
                              Prim2 ("-", Access (AccVar "n"), CstI 1))))]));
            Stmt (Expr (Prim1 ("printc", CstI 10)))])]
 ```
@@ -371,7 +371,7 @@ Go to directory `MicroC` and see files `Absyn.fs` and `Interp.fs` for answer.
 
 ## Exercise 7.5
 
-**Extend the micro-C lexer and parser to accept ++e and -e also, and to buold the corresponding abstract syntax.**
+**Extend the micro-C lexer and parser to accept ++e and -e also, and to build the corresponding abstract syntax.**
 
 Go to directory `MicroC` and see files `CPar.fsy` and `CLex.fsl` for answer.
 
