@@ -718,11 +718,26 @@ There should be no fall-through from one `case` to the next:
 Go to directory `MicroC` and see files `Absyn.fs`, `CLex.fsl`, `CPar.fsy` and `Comp.fs` for answer.
 
 ```fsharp
-
+> open ParseAndComp;;
+> compile "../8.6/switch";;
+val it: Machine.instr list =
+  [LDARGS; CALL (1, "L1"); STOP; Label "L1"; INCSP 1; INCSP 1; GETBP; CSTI 2;
+   ADD; CSTI 2010; STI; INCSP -1; GETBP; CSTI 0; ADD; LDI; CSTI 1; EQ;
+   IFZERO "L3"; GETBP; CSTI 1; ADD; CSTI 31; STI; INCSP -1; INCSP 0; GOTO "L2";
+   Label "L3"; GETBP; CSTI 0; ADD; LDI; CSTI 2; EQ; IFZERO "L4"; GETBP; CSTI 1;
+   ADD; CSTI 28; STI; INCSP -1; GETBP; CSTI 2; ADD; LDI; CSTI 4; MOD; CSTI 0;
+   EQ; IFZERO "L5"; GETBP; CSTI 1; ADD; CSTI 29; STI; INCSP -1; GOTO "L6";
+   Label "L5"; INCSP 0; Label "L6"; INCSP 0; GOTO "L2"; Label "L4"; GETBP;
+   CSTI 0; ADD; LDI; CSTI 3; EQ; IFZERO "L7"; GETBP; CSTI 1; ADD; CSTI 31; STI;
+   INCSP -1; INCSP 0; GOTO "L2"; Label "L7"; Label "L2"; GETBP; CSTI 1; ADD;
+   LDI; PRINTI; INCSP -1; CSTI 10; PRINTC; INCSP -1; INCSP -2; RET 0]
 ```
 
 ```java
+java Machine ../8.6/switch.out 2
+28 
 
+Ran 0.018 seconds
 ```
 
 </b>
