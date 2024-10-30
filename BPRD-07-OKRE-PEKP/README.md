@@ -305,44 +305,51 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 ```
 
 ```txt
-[ ]{0: LDARGS}
-[ 4 ]{1: CALL 1 5}
-[ 4 -999 4 ]{5: INCSP 1}
-[ 4 -999 4 0 ]{7: GETBP}
-[ 4 -999 4 0 2 ]{8: CSTI 1}
-[ 4 -999 4 0 2 1 ]{10: ADD}
-[ 4 -999 4 0 3 ]{11: CSTI 0}
-[ 4 -999 4 0 3 0 ]{13: STI}
-[ 4 -999 4 0 0 ]{14: INCSP -1}
-[ 4 -999 4 0 ]{16: GOTO 43}
-[ 4 -999 4 0 ]{43: GETBP}
-[ 4 -999 4 0 2 ]{44: CSTI 1}
-[ 4 -999 4 0 2 1 ]{46: ADD}
-[ 4 -999 4 0 3 ]{47: LDI}
-[ 4 -999 4 0 0 ]{48: GETBP}
-[ 4 -999 4 0 0 2 ]{49: CSTI 0}
-[ 4 -999 4 0 0 2 0 ]{51: ADD}
-[ 4 -999 4 0 0 2 ]{52: LDI}
-[ 4 -999 4 0 0 4 ]{53: LT}
-[ 4 -999 4 0 1 ]{54: IFNZRO 18}
-[ 4 -999 4 0 ]{18: GETBP}
-[ 4 -999 4 0 2 ]{19: CSTI 1}
-[ 4 -999 4 0 2 1 ]{21: ADD}
-[ 4 -999 4 0 3 ]{22: LDI}
-[ 4 -999 4 0 0 ]{23: PRINTI}
-0 [ 4 -999 4 0 0 ]{24: INCSP -1}
-[ 4 -999 4 0 ]{26: GETBP}
-[ 4 -999 4 0 2 ]{27: CSTI 1}
-[ 4 -999 4 0 2 1 ]{29: ADD}
-[ 4 -999 4 0 3 ]{30: GETBP}
-[ 4 -999 4 0 3 2 ]{31: CSTI 1}
-[ 4 -999 4 0 3 2 1 ]{33: ADD}
-[ 4 -999 4 0 3 3 ]{34: LDI}
-[ 4 -999 4 0 3 0 ]{35: CSTI 1}
-[ 4 -999 4 0 3 0 1 ]{37: ADD}
-[ 4 -999 4 0 3 1 ]{38: STI}
-[ 4 -999 4 1 1 ]{39: INCSP -1}
-[ 4 -999 4 1 ]{41: INCSP 0}
+[ ]{0: LDARGS}                   // Load function arguments 
+[ 4 ]{1: CALL 1 5}               // Call function at address 5, saving return address
+[ 4 -999 4 ]{5: INCSP 1}         // Increase pointer by 1
+[ 4 -999 4 0 ]{7: GETBP}         // Load base pointer
+[ 4 -999 4 0 2 ]{8: CSTI 1}      // Push 1 onto stack
+[ 4 -999 4 0 2 1 ]{10: ADD}      // Base pointer + 1
+[ 4 -999 4 0 3 ]{11: CSTI 0}     // Push 0 onto stack
+[ 4 -999 4 0 3 0 ]{13: STI}      // Store value
+[ 4 -999 4 0 0 ]{14: INCSP -1}   // Decrease pointer by 1
+[ 4 -999 4 0 ]{16: GOTO 43}      // Go to address 43
+
+[ 4 -999 4 0 ]{43: GETBP}        // Load base pointer
+[ 4 -999 4 0 2 ]{44: CSTI 1}     // Push 1 onto stack
+[ 4 -999 4 0 2 1 ]{46: ADD}      // Base pointer + 1
+[ 4 -999 4 0 3 ]{47: LDI}        // Load value
+[ 4 -999 4 0 0 ]{48: GETBP}      // Load base pointer
+[ 4 -999 4 0 0 2 ]{49: CSTI 0}   // Push 0 onto stack
+[ 4 -999 4 0 0 2 0 ]{51: ADD}    // Base pointer + 0
+[ 4 -999 4 0 0 2 ]{52: LDI}      // Load value
+[ 4 -999 4 0 0 4 ]{53: LT}       // if base pointer + 1 < base pointer + 0
+[ 4 -999 4 0 1 ]{54: IFNZRO 18}  // If true, go to address 18
+
+[ 4 -999 4 0 ]{18: GETBP}        // Load base pointer
+[ 4 -999 4 0 2 ]{19: CSTI 1}     // Push 1 onto stack
+[ 4 -999 4 0 2 1 ]{21: ADD}      // Base pointer + 1
+[ 4 -999 4 0 3 ]{22: LDI}        // Load value
+[ 4 -999 4 0 0 ]{23: PRINTI}     // Print value
+0 [ 4 -999 4 0 0 ]{24: INCSP -1} // Clean up
+
+[ 4 -999 4 0 ]{26: GETBP}        // Load base pointer
+[ 4 -999 4 0 2 ]{27: CSTI 1}     // Push 1 onto stack
+[ 4 -999 4 0 2 1 ]{29: ADD}      // Base pointer + 1
+[ 4 -999 4 0 3 ]{30: GETBP}      // Load base pointer
+[ 4 -999 4 0 3 2 ]{31: CSTI 1}   // Push 1 onto stack
+[ 4 -999 4 0 3 2 1 ]{33: ADD}    // Value + 1
+[ 4 -999 4 0 3 3 ]{34: LDI}      // Load value
+[ 4 -999 4 0 3 0 ]{35: CSTI 1}   // Push 1 onto stack
+[ 4 -999 4 0 3 0 1 ]{37: ADD}    // Value + 1
+[ 4 -999 4 0 3 1 ]{38: STI}      // Store value
+[ 4 -999 4 1 1 ]{39: INCSP -1}   // Decrease pointer by 1
+
+[ 4 -999 4 1 ]{41: INCSP 0}      // Maintain alignment
+
+// From here loop continues with similar steps as above, where the condition is loaded, printed, incremented, and stored until loop is exited.
+
 [ 4 -999 4 1 ]{43: GETBP}
 [ 4 -999 4 1 2 ]{44: CSTI 1}
 [ 4 -999 4 1 2 1 ]{46: ADD}
@@ -353,6 +360,7 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 [ 4 -999 4 1 1 2 ]{52: LDI}
 [ 4 -999 4 1 1 4 ]{53: LT}
 [ 4 -999 4 1 1 ]{54: IFNZRO 18}
+
 [ 4 -999 4 1 ]{18: GETBP}
 [ 4 -999 4 1 2 ]{19: CSTI 1}
 [ 4 -999 4 1 2 1 ]{21: ADD}
@@ -371,6 +379,7 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 [ 4 -999 4 1 3 2 ]{38: STI}
 [ 4 -999 4 2 2 ]{39: INCSP -1}
 [ 4 -999 4 2 ]{41: INCSP 0}
+
 [ 4 -999 4 2 ]{43: GETBP}
 [ 4 -999 4 2 2 ]{44: CSTI 1}
 [ 4 -999 4 2 2 1 ]{46: ADD}
@@ -381,6 +390,7 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 [ 4 -999 4 2 2 2 ]{52: LDI}
 [ 4 -999 4 2 2 4 ]{53: LT}
 [ 4 -999 4 2 1 ]{54: IFNZRO 18}
+
 [ 4 -999 4 2 ]{18: GETBP}
 [ 4 -999 4 2 2 ]{19: CSTI 1}
 [ 4 -999 4 2 2 1 ]{21: ADD}
@@ -399,6 +409,7 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 [ 4 -999 4 2 3 3 ]{38: STI}
 [ 4 -999 4 3 3 ]{39: INCSP -1}
 [ 4 -999 4 3 ]{41: INCSP 0}
+
 [ 4 -999 4 3 ]{43: GETBP}
 [ 4 -999 4 3 2 ]{44: CSTI 1}
 [ 4 -999 4 3 2 1 ]{46: ADD}
@@ -409,6 +420,7 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 [ 4 -999 4 3 3 2 ]{52: LDI}
 [ 4 -999 4 3 3 4 ]{53: LT}
 [ 4 -999 4 3 1 ]{54: IFNZRO 18}
+
 [ 4 -999 4 3 ]{18: GETBP}
 [ 4 -999 4 3 2 ]{19: CSTI 1}
 [ 4 -999 4 3 2 1 ]{21: ADD}
@@ -427,6 +439,7 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 [ 4 -999 4 3 3 4 ]{38: STI}
 [ 4 -999 4 4 4 ]{39: INCSP -1}
 [ 4 -999 4 4 ]{41: INCSP 0}
+
 [ 4 -999 4 4 ]{43: GETBP}
 [ 4 -999 4 4 2 ]{44: CSTI 1}
 [ 4 -999 4 4 2 1 ]{46: ADD}
@@ -437,9 +450,10 @@ java Machinetrace ex3.out 4 > ex3trace.txt
 [ 4 -999 4 4 4 2 ]{52: LDI}
 [ 4 -999 4 4 4 4 ]{53: LT}
 [ 4 -999 4 4 0 ]{54: IFNZRO 18}
-[ 4 -999 4 4 ]{56: INCSP -1}
-[ 4 -999 4 ]{58: RET 0}
-[ 4 ]{4: STOP}
+
+[ 4 -999 4 4 ]{56: INCSP -1}        // Clean up stack
+[ 4 -999 4 ]{58: RET 0}             // Return from function
+[ 4 ]{4: STOP}                      // Program stops
 ```
 
 </br>
