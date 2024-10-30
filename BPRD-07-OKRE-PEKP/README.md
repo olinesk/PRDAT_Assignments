@@ -172,39 +172,112 @@ val it: Machine.instr list =
 ```txt
 Symbolic bytecode for ex3.c
 
-[LDARGS; CALL (1, "L1"); STOP;
-Label "L1"; INCSP 1; GETBP; CSTI 1; ADD;
-            CSTI 0; STI;
-            INCSP -1; GOTO "L3";
-Label "L2"; GETBP; CSTI 1; ADD; LDI; PRINTI;
-            INCSP -1; GETBP; CSTI 1; ADD;
-            GETBP; CSTI 1; ADD; LDI; 
-            CSTI 1; ADD; STI; 
-            INCSP -1; 
-            INCSP 0; 
-Label "L3"; GETBP; CSTI 1; ADD; LDI; 
-            GETBP; CSTI 0; ADD; LDI;
-            LT; 
-            IFNZRO "L2"; 
-            INCSP -1; RET 0]
+LDARGS               // Load function arguments from call stack
+CALL (1, "L1")       // Call function at L1, return address to stack
+STOP                 // Halt program execution
+L1:                  // Start of main function
+   INCSP 1           // Increase pointer by 1
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   CSTI 0            // Push 0 onto stack
+   STI               // Store value 0
+   INCSP -1          // Decrease stack pointer by 1
+   GOTO "L3"         // Go to L3, conditional statement
+L2:                  // while loop body
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   LDI               // Load top value
+   PRINTI            // Print value
+   INCSP -1          // Decrease by 1
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   LDI               // Load top value
+   CSTI 1            // Push 1 onto stack
+   ADD               // Value + 1
+   STI               // Store value
+   INCSP -1          // Decrease by 1
+   INCSP 0           // No-op to maintain stack alignment
+L3:                  // while loop
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   LDI               // Load value
+   GETBP             // Load base pointer
+   CSTI 0            // Push 0 onto stack
+   ADD               // Base pointer + 0
+   LDI               // Load value
+   LT                // if base pointer + 1 < base pointer + 0
+   IFNZRO "L2"       // if true, go to L2
+   INCSP -1          // Clean up stack, decrease by 1
+   RET 0             // return
 ```
 
 ```txt
 Symbolic bytecode for ex5.c
 
-[LDARGS; CALL (1, "L1"); STOP; 
-Label "L1"; INCSP 1; GETBP; CSTI 1; ADD;
-            GETBP; CSTI 0; ADD; LDI; STI; INCSP -1; 
-            INCSP 1; GETBP; CSTI 0; ADD; LDI;
-            GETBP; CSTI 2; ADD; CALL (2, "L2"); INCSP -1; 
-            GETBP; CSTI 2; ADD; LDI; PRINTI; INCSP -1; INCSP -1; 
-            GETBP; CSTI 1; ADD; LDI; PRINTI; INCSP -1;
-            INCSP -1; RET 0; 
-Label "L2"; GETBP; CSTI 1; ADD; LDI; 
-            GETBP; CSTI 0; ADD; LDI; 
-            GETBP; CSTI 0; ADD; LDI; 
-            MUL; STI; INCSP -1; 
-            INCSP 0; RET 1]
+LDARGS               // Load function arguments from call stack           
+CALL 1, "L1"         // Call function at L1, return address to stack
+STOP                 // Halt program execution
+L1:                  // Start of main function
+   INCSP 1           // Increase pointer by 1
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   GETBP             // Load base pointer
+   CSTI 0            // Push 0 onto stack
+   ADD               // Base pointer + 0
+   LDI               // Load value
+   STI               // Store value
+   INCSP -1          // Decrease pointer by 1
+   INCSP 1           // Increase pointer by 1
+   GETBP             // Load base pointer
+   CSTI 0            // Push 0 onto stack
+   ADD               // Base pointer + 0
+   LDI               // Load value
+   GETBP             // Load base pointer
+   CSTI 2            // Push 2 onto stack
+   ADD               // Base pointer + 2
+   CALL 2, "L2"      // Call L2 with 2 arguments
+   INCSP -1          // Decrease pointer by 1
+   GETBP             // Load base pointer
+   CSTI 2            // Push 2 onto stack
+   ADD               // Base pointer + 2
+   LDI               // Load value
+   PRINTI            // Print value
+   INCSP -1          // Decrease pointer by 1
+   INCSP -1          // Decrease pointer by 1
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   LDI               // Load value
+   PRINTI            // Print value
+   INCSP -1          // Decrease pointer by 1
+   INCSP -1          // Decrease pointer by 1
+   RET 0             // Return with 0 arguments
+L2:                  // Start second function
+   GETBP             // Load base pointer
+   CSTI 1            // Push 1 onto stack
+   ADD               // Base pointer + 1
+   LDI               // Load value
+   GETBP             // Load base pointer
+   CSTI 0            // Push 0 onto stack
+   ADD               // Base pointer + 0
+   LDI               // Load value
+   GETBP             // Load base pointer
+   CSTI 0            // Push 0 onto stack
+   ADD               // Base pointer + 0
+   LDI               // Load value
+   MUL               // Multiply top values
+   STI               // Store new value
+   INCSP -1          // Decrease pointer by 1
+   INCSP 0           // No-op to align pointer
+   RET 1             // Return
 ```
 
 **Execute the compiled programs using `java Machine ex3.out 10` and similar.**
@@ -627,6 +700,16 @@ There should be no fall-through from one `case` to the next:
 - The value after a `case` must be an integer constant, and a case must be followed by a statement block.
 - A `switch` with `n` cases can be compiled using `n` labels, the last of which is at the very end of the `switch`.
 - Do not implement the `break` statement or the `default` branch.
+
+Go to directory `MicroC` and see files `Absyn.fs`, `CLex.fsl`, `CPar.fsy` and `Comp.fs` for answer.
+
+```fsharp
+
+```
+
+```java
+
+```
 
 </b>
 

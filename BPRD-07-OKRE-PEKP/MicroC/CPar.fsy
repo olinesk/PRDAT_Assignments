@@ -22,6 +22,7 @@ let nl = CstI 10
 %token EOF
 %token INC DEC            // Exercise 7.5
 %token QUESTIONMARK COLON   // Exercise 8.5
+%token SWITCH CASE          // Exercise 8.6
 
 %right ASSIGN             /* lowest precedence */
 %right QUESTIONMARK COLON         // Exercise 8.5
@@ -113,6 +114,13 @@ StmtM:  /* No unbalanced if-else */
       ]))
     ]
   }
+  | SWITCH LPAR Expr RPAR LBRACE Cases RBRACE { Switch($3, $6) }      // Exercise 8.6
+;
+
+// Exercise 8.6
+Cases:
+    /* empty */                         { [] }
+  | CASE CSTINT COLON Block Cases       { ($2, $4) :: $5 }
 ;
 
 StmtU:
